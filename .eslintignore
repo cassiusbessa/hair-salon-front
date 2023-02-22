@@ -1,0 +1,5 @@
+node_modules
+vite.config.ts
+vite-env.d.ts
+public
+src/Assets
