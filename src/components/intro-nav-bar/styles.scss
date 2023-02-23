@@ -2,7 +2,6 @@
 @import '../../styles/mixins';
 
 .nav-bar-container{
-  position: absolute;
   border: 1px solid red;
   @include flexAlignment(row);
   gap: 28px;
