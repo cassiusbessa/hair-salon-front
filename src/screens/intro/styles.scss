@@ -17,6 +17,17 @@
     bottom: 0;
     margin: 1rem;
     z-index: 2;
+    animation: fadeInText 7s ease-in-out;
   }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  
 }
 

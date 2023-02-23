@@ -11,10 +11,21 @@
     li {
       display: inline-block;
       font-weight: 800;
-      color: $--secondary-light-text;    
+      color: $--secondary-light-text;  
+      animation: fadeInText 7s ease-in-out;  
     }
     .booking {
       color:$--primary-light-green
     }  
   }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  
 }
