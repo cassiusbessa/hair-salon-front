@@ -16,8 +16,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@Store/*": ["./src/Redux/Store/*"],
-      "@States/*": ["./src/Redux/States/*"]
+      "@store/*": ["./src/redux/store/*"],
+      "@states/*": ["./src/redux/states/*"],
+      "@components/*": ["./src/components/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@assets/*": ["./src/assets/*"],
     }
   },
   "include": ["src"],
