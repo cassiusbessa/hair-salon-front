@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.intro-container {
+  @include size(100vw, 100vh);
+  background-color: black;
+  .intro-content-container {
+    padding-left: 2rem;
+    position: relative;
+    @include flexAlignment(column, flex-start, flex-start);
+    gap: 6rem;
+    flex-grow: 1;
+    z-index: 2;
+  }
+  .social-media-icons-content{
+    position: absolute;
+    bottom: 0;
+    margin: 1rem;
+    z-index: 2;
+    animation: fadeInText 7s ease-in-out;
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+}
+

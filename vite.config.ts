@@ -7,8 +7,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@Store": path.resolve(__dirname, './src/Redux/Store'),
-      "@States": path.resolve(__dirname, './src/Redux/States'),
+      "@store": path.resolve(__dirname, './src/redux/store'),
+      "@states": path.resolve(__dirname, './src/redux/states'),
+      "@components": path.resolve(__dirname, './src/components'),
+      "@screens": path.resolve(__dirname, './src/screens'),
+      "@assets": path.resolve(__dirname, './src/assets'),
     }
   }
 })

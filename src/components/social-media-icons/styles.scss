@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.social-media-icons-container {
+  @include flexAlignment(row, space-between, center);
+  z-index: 2;
+  gap: 1rem;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
