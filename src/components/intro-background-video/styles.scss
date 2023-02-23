@@ -1,5 +1,6 @@
 @import '../../styles/colors';
 @import '../../styles/mixins';
+
 .intro-background-video-container {
   @include size(100vw, 100vh);
   position: absolute;
