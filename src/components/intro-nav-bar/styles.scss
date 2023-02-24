@@ -2,19 +2,20 @@
 @import '../../styles/mixins';
 
 .nav-bar-container{
-  @include flexAlignment(row);
+  @include flexAlignment(row, flex-start, center);
   gap: 28px;
   ul {
     @include flexAlignment(column, flex-start, flex-start);
     gap: 2rem;
     list-style: none;
     li {
+      line-height: 0.8;
       display: inline-block;
-      font-weight: 800;
-      color: $--secondary-light-text;  
+      color: $--secondary-light-text;
       animation: fadeInText 7s ease-in-out;  
     }
     .booking {
+      font-weight: 800;
       color:$--primary-light-green
     }  
   }

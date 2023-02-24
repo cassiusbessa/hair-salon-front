@@ -1,25 +1,43 @@
 @import '../../styles/colors';
 @import '../../styles/mixins';
 
+
 .intro-container {
   @include size(100vw, 100vh);
   background-color: black;
-  .intro-content-container {
-    padding-left: 2rem;
-    position: relative;
-    @include flexAlignment(column, flex-start, flex-start);
-    gap: 6rem;
-    flex-grow: 1;
-    z-index: 2;
-  }
-  .social-media-icons-content{
-    position: absolute;
-    bottom: 0;
-    margin: 1rem;
-    z-index: 2;
-    animation: fadeInText 7s ease-in-out;
+    .intro-content {
+    padding: 2rem 2rem 0 10%;
+    @include size(100%, 100%);
+    display: grid;
+    grid-template-areas: 
+      "logo               logo               logo               logo               logo"
+      "catch-phrase       catch-phrase       catch-phrase       catch-phrase       catch-phrase"
+      "nav-bar            nav-bar            nav-bar            nav-bar            nav-bar"
+      ".                  .                 .                  .                  ."
+      "social-media-icons .                 .                  .                  .";
+    grid-template-columns: 10% repeat(5, 1fr); 
+    grid-template-rows: 20% repeat(3, 1fr) 58px;
+    .logo-container {
+      grid-area: logo;
+      z-index: 2;
+    };
+    .catch-phrase-container {
+      grid-area: catch-phrase;
+      z-index: 2;
+    };
+    .nav-bar-container {
+      grid-area: nav-bar;
+      z-index: 2;
+    };
+    .social-media-icons-container {
+      grid-area: social-media-icons;
+      z-index: 2;
+      animation: fadeInText 7s ease-in-out;
+    };
+
   }
 }
+
 
 @keyframes fadeInText {
   0% {

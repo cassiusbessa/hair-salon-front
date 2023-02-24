@@ -8,12 +8,10 @@ import IntroBackgroundVideo from '@components/intro-background-video';
 const Intro = () => (
 	<div className='intro-container'>
 		<IntroBackgroundVideo />
-		<div className='intro-content-container'>
+		<div className='intro-content'>
 			<Logo />
 			<CatchPhrase />
 			<IntroNavBar />
-		</div>
-		<div className='social-media-icons-content'>
 			<SocialMediaIcons />
 		</div>
 	</div>
