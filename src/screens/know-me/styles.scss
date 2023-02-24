@@ -1,0 +1,36 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.know-me-container{
+  @include size(100vw, fit-content);
+  @include flexAlignment(column, flex-start, flex-start);
+  gap: 1.5rem;
+  padding: 4%;
+  h1 {
+    color: $--primary-light-green;
+    font-size: 3rem;
+  }
+  .know-me-content {
+    @include size(100%, fit-content);
+    @include flexAlignment(column, flex-start, flex-start);
+    gap: 1.5rem;
+    img {    
+      @include size(374px, 363px);
+      max-width: 100%;
+    }
+    p {
+      color: $--primary-dark-text;
+      line-height: 2rem;
+      font-size: 1.4rem;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+    @media only screen and (min-width: 768px) {
+      @include flexAlignment(row, center, center);
+      gap: 3rem;
+      .img {
+        height: 100%;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import {store} from '@store/ReduxStore';
 import {Provider} from 'react-redux';
 import Intro from '@screens/intro';
 import BookButton from '@components/book-button';
+import KnowMe from '@screens/know-me';
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -12,6 +13,7 @@ function App() {
 		<Provider store={store} >
 			<Intro />
 			<BookButton />
+			<KnowMe />
 		</Provider>
 	);
 }
