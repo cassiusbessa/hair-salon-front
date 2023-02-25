@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface ISvgIcon {
-	hoverColor?: string;
+	onHoverColor?: string;
+	onClickColor?: string;
 	color?: string;
 	className?: string;
 	width?: string;
@@ -10,11 +11,34 @@ interface ISvgIcon {
 
 const SvgHamburguerIcon = (props: ISvgIcon) => {
 	const [isHover, setIsHover] = useState(false);
+	const [isActive, setIsActive] = useState(false);
+	const [colorItem, setColorItem] = useState(props.color ?? 'white')
+
+	useEffect(() => {
+		if (isActive) {
+			setColorItem(props.onClickColor ?? 'white')
+			return
+		} 
+
+		if (isHover) {
+			setColorItem(props.onHoverColor ?? 'white')
+		} else {
+			setColorItem(props.color ?? 'white')
+		}
+	}, [isHover, isActive])
+
+	const handlerMouseUp = () => {
+		setTimeout(() => {
+			setIsActive(false)
+		}, 50)
+	}
 
 	return (
 		<svg
 			onMouseEnter={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}
+			onMouseDown={() => setIsActive(true)}
+			onMouseUp={handlerMouseUp}
 			className={props.className ?? 'svg-hamburguer-icon'}
 			width={props.width ?? '70'}
 			height={props.width ?? '61'}
@@ -24,11 +48,11 @@ const SvgHamburguerIcon = (props: ISvgIcon) => {
 		>
 			<path
 				d="M15 15.5H55M15 30.9601H55M15 45.5H55"
-				stroke={isHover ? props.hoverColor : props.color ?? 'white'}
-				stroke-width="5"
-				stroke-miterlimit="2.3662"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				stroke={colorItem}
+				strokeWidth="5"
+				strokeMiterlimit="2.3662"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>
 	)
