@@ -1,8 +1,12 @@
 import SocialMediaIcons from '@components/social-media-icons';
 import './styles.scss';
 
-const DropdownComponent = () => (
-	<div className='dropdown'>
+type Props = {
+	isOpen: boolean;
+};
+
+const DropdownComponent = ({isOpen}: Props) => (
+	<div className={`dropdown ${isOpen ? 'open' : ''}`}>
 		<nav>
 			<div>Conheça-me</div>
 			<div>Trabalhos</div>

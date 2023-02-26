@@ -5,7 +5,11 @@
 	@include size(100%);
 	background-color: $--primary-bg-black-translucent;
 	padding: 28px;
-	
+	transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	transform: rotateX(90deg);
+	transform-origin: top center;
+	z-index: -1;
+
 	div, img {
 		cursor: pointer;
 	}
@@ -13,7 +17,7 @@
 	img:hover {
 		color: #75B5A0;
 	}
-	
+
 	nav {
 		color: white;
 		font-weight: 700;
@@ -22,9 +26,8 @@
 		:hover {
 			color: #75B5A0;
 		}
-		
 
-		div:nth-last-child(1) {			
+		div:nth-last-child(1) {
 			color: #75B5A0;
 			text-transform: uppercase;
 			font-family: 'Jura';
@@ -36,4 +39,8 @@
 			font-size: 22px;
 		}
 	}
+}
+
+.open {
+	transform: rotateX(0);
 }

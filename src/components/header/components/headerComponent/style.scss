@@ -9,8 +9,13 @@
 	justify-content: space-between;
 	align-items: center;
 
-	.svg-hamburguer-icon {
-		cursor: pointer;
+	button {
+		border: none;
+		visibility: hidden;
+
+		.svg-hamburguer-icon {
+			cursor: pointer;
+			visibility: visible;
+		}
 	}
 }
-

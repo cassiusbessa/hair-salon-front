@@ -1,5 +1,10 @@
+@import '@styles/mixins';
+
 .header-dropdown-container {
+	@include size(100%, fit-content);
 	display: flex;
 	flex-direction: column;
 	gap: 1px;
+	position: fixed;
+	top: 0;
 }
