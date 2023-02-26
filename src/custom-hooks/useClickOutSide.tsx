@@ -5,7 +5,7 @@ export const useClickOutSide = (handler: () => void) => {
 
 	useEffect(() => {
 		const handlerIfNoTarget = (e: any) => {
-			if (!domNode.current?.contains(e.target as Node)) {
+			if (!domNode.current?.contains(e.target as HTMLElement)) {
 				handler();
 			}
 		};
