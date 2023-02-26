@@ -1,4 +1,3 @@
-import React from 'react';
 import {useState} from 'react';
 import {store} from '@store/ReduxStore';
 import {Provider} from 'react-redux';

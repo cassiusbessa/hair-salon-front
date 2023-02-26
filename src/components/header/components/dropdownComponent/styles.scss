@@ -2,13 +2,13 @@
 @import '../../../../styles/colors';
 
 .dropdown {
-	@include size(100%);
+	width: 100%;
 	background-color: $--primary-bg-black-translucent;
 	padding: 28px;
 	transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 	transform: rotateX(90deg);
 	transform-origin: top center;
-	z-index: -1;
+	z-index: 3;
 
 	div, img {
 		cursor: pointer;
