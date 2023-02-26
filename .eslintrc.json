@@ -38,6 +38,7 @@
     "rules": {
         "@typescript-eslint/no-unsafe-assignment": "off",
         "react/react-in-jsx-scope": "off",
-        "arrow-body-style": "off"
+        "arrow-body-style": "off",
+        "capitalized-comments": "off"
     }
 }
