@@ -30,7 +30,8 @@
             "alias": {
                 "map": [
                     ["@Store/*", "./src/Redux/Store/*"],
-                    ["@States/*", "./src/Redux/Slices/*"]
+                    ["@States/*", "./src/Redux/Slices/*"],
+                    ["@custom-hooks/*", "./src/custom-hooks/*"]
                 ]
             }
         }

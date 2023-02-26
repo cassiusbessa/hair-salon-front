@@ -13,6 +13,7 @@ export default defineConfig({
       "@screens": path.resolve(__dirname, './src/screens'),
       "@assets": path.resolve(__dirname, './src/assets'),
       "@styles": path.resolve(__dirname, './src/styles'),
+      "@custom-hooks": path.resolve(__dirname, './src/custom-hooks'),
     }
   }
 })
