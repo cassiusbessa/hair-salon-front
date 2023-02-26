@@ -37,6 +37,7 @@
     },
     "rules": {
         "@typescript-eslint/no-unsafe-assignment": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "arrow-body-style": "off"
     }
 }
