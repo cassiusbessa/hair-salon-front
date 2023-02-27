@@ -21,6 +21,8 @@
       "@components/*": ["./src/components/*"],
       "@screens/*": ["./src/screens/*"],
       "@assets/*": ["./src/assets/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@custom-hooks/*": ["./src/custom-hooks/*"],
     }
   },
   "include": ["src"],

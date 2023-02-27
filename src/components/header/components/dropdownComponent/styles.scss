@@ -1,0 +1,46 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/colors';
+
+.dropdown {
+	width: 100%;
+	background-color: $--primary-bg-black-translucent;
+	padding: 28px;
+	transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	transform: rotate3d(1, 0, 0, 90deg);
+	transform-origin: top center;
+	z-index: 3;
+
+	div, img {
+		cursor: pointer;
+	}
+
+	img:hover {
+		color: #75B5A0;
+	}
+
+	nav {
+		color: white;
+		font-weight: 700;
+		line-height: 36px;
+		padding-bottom: 28px;
+		:hover {
+			color: #75B5A0;
+		}
+
+		div:nth-last-child(1) {
+			color: #75B5A0;
+			text-transform: uppercase;
+			font-family: 'Jura';
+			font-weight: 400;
+			font-size: 20px;
+		}
+
+		div:nth-last-child(1):hover {
+			font-size: 22px;
+		}
+	}
+}
+
+.open {
+	transform: rotate3d(0, 0, 0, 90deg);
+}

@@ -1,0 +1,15 @@
+.header-dropdown-container {
+	width: 100%;
+	max-height: 79px;
+	transition: max-height 0.5s linear;
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	position: fixed;
+	top: 0;
+	z-index: 3;
+}
+
+.resize-up {
+	max-height: 410px;
+}

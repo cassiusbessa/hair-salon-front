@@ -1,0 +1,22 @@
+@import '@styles/colors';
+@import '@styles/mixins';
+
+.header {
+	@include size(100%, 79px);
+	background-color: $--primary-bg-black;
+	padding: 0 28px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 4;
+
+	button {
+		border: none;
+		visibility: hidden;
+
+		.svg-hamburguer-icon {
+			cursor: pointer;
+			visibility: visible;
+		}
+	}
+}

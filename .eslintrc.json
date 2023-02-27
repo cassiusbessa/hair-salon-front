@@ -30,12 +30,16 @@
             "alias": {
                 "map": [
                     ["@Store/*", "./src/Redux/Store/*"],
-                    ["@States/*", "./src/Redux/Slices/*"]
+                    ["@States/*", "./src/Redux/Slices/*"],
+                    ["@custom-hooks/*", "./src/custom-hooks/*"]
                 ]
             }
         }
     },
     "rules": {
-        "@typescript-eslint/no-unsafe-assignment": "off"
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "react/react-in-jsx-scope": "off",
+        "arrow-body-style": "off",
+        "capitalized-comments": "off"
     }
 }
