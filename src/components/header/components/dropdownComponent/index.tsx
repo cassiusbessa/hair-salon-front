@@ -1,4 +1,3 @@
-import {type LegacyRef, type ClassAttributes, type MutableRefObject} from 'react';
 import SocialMediaIcons from '@components/social-media-icons';
 import './styles.scss';
 

@@ -1,4 +1,4 @@
-import {useEffect, useRef, type MutableRefObject, type LegacyRef} from 'react';
+import {useEffect, useRef, type MutableRefObject} from 'react';
 
 export const useClickOutSide = (handler: () => void) => {
 	const domNode: MutableRefObject<HTMLElement | undefined> = useRef();
