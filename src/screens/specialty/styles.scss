@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.speciality-container {
+  @include size(100vw, fit-content);
+  @include flexAlignment(column, flex-start, flex-start);
+  display: flex;
+  gap: 2rem;
+  img {
+    max-width: 100%;
+  } 
+}

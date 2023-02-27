@@ -5,15 +5,15 @@ import {Provider} from 'react-redux';
 import Intro from '@screens/intro';
 import BookButton from '@components/book-button';
 import KnowMe from '@screens/know-me';
+import Speciality from '@screens/specialty';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
 		<Provider store={store} >
 			<Intro />
 			<BookButton />
 			<KnowMe />
+			<Speciality />
 		</Provider>
 	);
 }
