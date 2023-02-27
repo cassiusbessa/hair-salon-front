@@ -6,13 +6,12 @@ import BookButton from '@components/book-button';
 import Header from '@components/header';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
 		<Provider store={store} >
 			<Header />
-			{/* <Intro />
-			<BookButton /> */}
+			<Intro />
+			<BookButton />
+			<div style={{width: '100px', height: '2000px', backgroundColor: 'green'}}></div>
 		</Provider>
 	);
 }
