@@ -1,0 +1,24 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.info-card-container {
+  @include flexAlignment(column, flex-start, flex-start);
+  @include size(100vw, fit-content);
+  margin-top: 2rem;
+  background-color: $--primary-light-green;
+  .info-card-title {
+    @include size(100vw, fit-content);
+    padding: 4%;
+    border-bottom: 1.5px solid white;
+    h2 {
+      color: $--primary-light-text;
+      font-size: 2.2rem;
+    }
+  }
+  p {
+    padding: 6%;
+    color: $--secondary-light-text;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}

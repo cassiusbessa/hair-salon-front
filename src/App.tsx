@@ -4,6 +4,7 @@ import Intro from '@screens/intro';
 import BookButton from '@components/book-button';
 import KnowMe from '@screens/know-me';
 import Header from '@components/header';
+import Speciality from '@screens/specialty';
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 			<Intro />
 			<BookButton />
 			<KnowMe />
+			<Speciality />
 		</Provider>
 	);
 }
