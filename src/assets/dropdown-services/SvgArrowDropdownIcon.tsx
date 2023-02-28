@@ -5,25 +5,32 @@ interface ISvgIcon {
 	onClickColor?: string;
 	color?: string;
 	className?: string;
-	width?: string;
-	height?: string;
+	width?: number;
+	height?: number;
 }
 
-const SvgArrowDropdownIcon = (props: ISvgIcon) => {
+const SvgArrowDropdownIcon = ({
+	className,
+	color = 'white',
+	height,
+	onClickColor,
+	onHoverColor,
+	width
+}: ISvgIcon) => {
 	const [isHover, setIsHover] = useState(false);
 	const [isActive, setIsActive] = useState(false);
-	const [colorItem, setColorItem] = useState(props.color ?? 'white')
+	const [colorItem, setColorItem] = useState(color ?? 'white')
 
 	useEffect(() => {
 		if (isActive) {
-			setColorItem(props.onClickColor ?? 'white')
+			setColorItem(onClickColor ?? 'white')
 			return
 		} 
 
 		if (isHover) {
-			setColorItem(props.onHoverColor ?? 'white')
+			setColorItem(onHoverColor ?? 'white')
 		} else {
-			setColorItem(props.color ?? 'white')
+			setColorItem(color ?? 'white')
 		}
 	}, [isHover, isActive])
 
@@ -35,13 +42,13 @@ const SvgArrowDropdownIcon = (props: ISvgIcon) => {
 
 	return (
 		<svg
-			onMouseEnter={props.onHoverColor ? () => setIsHover(true) : undefined}
-			onMouseLeave={props.onHoverColor ? () => setIsHover(false) : undefined}
-			onMouseDown={props.onClickColor ? () => setIsActive(true) : undefined}
-			onMouseUp={props.onClickColor ? handlerMouseUp : undefined}
-			className={props.className ?? 'svg-arrow-dropdown-icon'}
-			width='20'
-			height='12'
+			onMouseEnter={onHoverColor ? () => setIsHover(true) : undefined}
+			onMouseLeave={onHoverColor ? () => setIsHover(false) : undefined}
+			onMouseDown={onClickColor ? () => setIsActive(true) : undefined}
+			onMouseUp={onClickColor ? handlerMouseUp : undefined}
+			className={className ?? 'svg-arrow-dropdown-icon'}
+			width={width ? width : (height ?? 12) * 1.66666667}
+			height={height ? height : (width ?? 20) * 0.6}
 			viewBox='0 0 20 12'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'
