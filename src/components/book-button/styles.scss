@@ -8,6 +8,7 @@
   bottom: 0;
   right: 0;
   margin: 1rem;
+  z-index: 3;
   button {
     @include size(100%, 100%);
     @include flexAlignment(column, center, center);
