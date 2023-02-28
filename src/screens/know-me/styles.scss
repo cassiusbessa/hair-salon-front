@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 
 .know-me-container{
-  @include size(100vw, fit-content);
+  @include size(100%, fit-content);
   @include flexAlignment(column, flex-start, flex-start);
   gap: 1.5rem;
   padding: 4%;
