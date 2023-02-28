@@ -3,10 +3,11 @@
 
 .speciality-container {
   @include size(100vw, fit-content);
-  @include flexAlignment(column, flex-start, flex-start);
+  @include flexAlignment(column);
+  padding: 4rem 0 4rem 0;
   display: flex;
   gap: 2rem;
   img {
-    max-width: 100%;
+    width: 100%;
   } 
 }

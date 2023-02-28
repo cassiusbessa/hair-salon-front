@@ -1,0 +1,18 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/colors';
+
+.carrousel-dots-container {
+  @include flexAlignment(row, center, center);
+  gap: 0.5rem;
+  .carrousel-dot {
+    @include size(0.5rem, 0.5rem);
+    border-radius: 50%;
+    background-color: $--primary-bg-color;
+    opacity: 0.5;
+    cursor: pointer;
+    &.active {
+      background-color: $--primary-bg-color;
+      opacity:1;
+    }
+  }
+}

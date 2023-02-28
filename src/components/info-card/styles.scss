@@ -2,23 +2,55 @@
 @import '../../styles/mixins';
 
 .info-card-container {
-  @include flexAlignment(column, flex-start, flex-start);
-  @include size(100vw, fit-content);
-  margin-top: 2rem;
+  @include size(100%, 600px);
+  display: grid; 
+  grid-template-columns: 0.4fr 2.2fr 0.4fr; 
+  grid-template-rows: 0.5fr 2.2fr 0.3fr; 
   background-color: $--primary-light-green;
   .info-card-title {
-    @include size(100vw, fit-content);
-    padding: 4%;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: 0.4fr 2.2fr 0.4fr; 
     border-bottom: 1.5px solid white;
     h2 {
+      align-self: center;
       color: $--primary-light-text;
       font-size: 2.2rem;
+      grid-column: 2/3;
     }
   }
+  .left-arrow {
+    border: none;
+    background-color: transparent;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+  }
   p {
-    padding: 6%;
     color: $--secondary-light-text;
+    padding-top: 1rem;
     font-size: 1.5rem;
     line-height: 2rem;
+    grid-column: 2;
+    grid-row: 2/4;    
+  }
+  .carrousel-text {
+    grid-row: 2;    
+  }
+  .right-arrow {
+    border: none;
+    background-color: transparent;
+    grid-column: 3;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+    rotate: 180deg;
+  }
+  .carrousel-dots-container {
+    grid-column: 1/4;
+    grid-row: 3;
   }
 }
