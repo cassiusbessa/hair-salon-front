@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import './styles.scss';
 import carrouselArrow from '@assets/info-card/arrow.svg';
 import CarrouselDotsContainer from './components/carrousel-dots-container';
+import {useCarousel} from '@custom-hooks/use-carousel';
 
 type Props = {
 	title: string;
@@ -11,37 +12,7 @@ type Props = {
 };
 
 const InfoCard = ({title, content, isCarrousel}: Props) => {
-	const twelveSeconds = 12000;
-	const [activeIndex, setActiveIndex] = React.useState(0);
-
-	const handleLeftArrowClick = () => {
-		if (activeIndex === 0) {
-			setActiveIndex(content.length - 1);
-		} else {
-			setActiveIndex(activeIndex - 1);
-		}
-	};
-
-	const handleRightArrowClick = () => {
-		if (activeIndex === content.length - 1) {
-			setActiveIndex(0);
-		} else {
-			setActiveIndex(activeIndex + 1);
-		}
-	};
-
-	const handleDotClick = (index: number) => {
-		setActiveIndex(index);
-	};
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			handleRightArrowClick();
-		}, twelveSeconds);
-		return () => {
-			clearInterval(interval);
-		};
-	}, [activeIndex]);
+	const {activeIndex, handleDotClick, handleArrowClick} = useCarousel(content);
 
 	return (
 		<div className='info-card-container'>
@@ -50,11 +21,15 @@ const InfoCard = ({title, content, isCarrousel}: Props) => {
 			</div>
 			{isCarrousel
 				? <>
-      	<button type='button' className='left-arrow' onClick={handleLeftArrowClick}>
+      	<button type='button' className='left-arrow' onClick={() => {
+						handleArrowClick('left');
+					}}>
         	<img src={carrouselArrow} alt='arrow' />
       	</button>
       	<p className={isCarrousel ? 'carrousel-text' : ''}>{content[activeIndex]}</p>
-      	<button type='button' className='right-arrow' onClick={handleRightArrowClick}>
+      	<button type='button' className='right-arrow' onClick={() => {
+						handleArrowClick('right');
+					}}>
       		<img src={carrouselArrow} alt='arrow' />
       	</button>
       	<CarrouselDotsContainer quantity={content.length} setActiveIndex={handleDotClick} activeIndex={activeIndex} />
