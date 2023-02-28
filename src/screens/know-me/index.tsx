@@ -1,4 +1,3 @@
-import React from 'react';
 import sulaPhoto from '@assets/know-me/sula-photo.png';
 import './styles.scss';
 

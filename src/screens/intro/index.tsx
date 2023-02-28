@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import CatchPhrase from '@components/catchphrase';
 import IntroNavBar from '@components/intro-nav-bar';
 import Logo from '@components/logo';

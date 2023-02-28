@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles.scss';
 import InfoCard from '@components/info-card';
 import {content, title} from '@assets/speciality/text';

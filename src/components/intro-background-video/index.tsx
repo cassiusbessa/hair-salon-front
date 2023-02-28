@@ -1,4 +1,3 @@
-import React from 'react';
 import backgroundVideo from '@assets/intro/intro-hair-video.mp4';
 import './styles.scss';
 

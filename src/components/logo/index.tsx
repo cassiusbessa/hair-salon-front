@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles.scss';
 import logo from '@assets/intro/logo.svg';
 

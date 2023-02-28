@@ -1,4 +1,3 @@
-import React from 'react';
 import calendarIcon from '../../assets/book-botton/calendar-clock.svg';
 import './styles.scss';
 
