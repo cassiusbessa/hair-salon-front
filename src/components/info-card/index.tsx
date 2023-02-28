@@ -1,5 +1,3 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-import React, {useEffect} from 'react';
 import './styles.scss';
 import carrouselArrow from '@assets/info-card/arrow.svg';
 import CarrouselDotsContainer from './components/carrousel-dots-container';
@@ -19,22 +17,23 @@ const InfoCard = ({title, content, isCarrousel}: Props) => {
 			<div className='info-card-title' >
 				<h2>{title}</h2>
 			</div>
-			{isCarrousel
-				? <>
-      	<button type='button' className='left-arrow' onClick={() => {
-						handleArrowClick('left');
-					}}>
-        	<img src={carrouselArrow} alt='arrow' />
-      	</button>
-      	<p className={isCarrousel ? 'carrousel-text' : ''}>{content[activeIndex]}</p>
-      	<button type='button' className='right-arrow' onClick={() => {
-						handleArrowClick('right');
-					}}>
-      		<img src={carrouselArrow} alt='arrow' />
-      	</button>
-      	<CarrouselDotsContainer quantity={content.length} setActiveIndex={handleDotClick} activeIndex={activeIndex} />
-				</>
-				: <p>{content[0]}</p>
+			{
+				isCarrousel
+					? <>
+						<button type='button' className='left-arrow' onClick={() => {
+							handleArrowClick('left');
+						}}>
+							<img src={carrouselArrow} alt='arrow' />
+						</button>
+						<p className={isCarrousel ? 'carrousel-text' : ''}>{content[activeIndex]}</p>
+						<button type='button' className='right-arrow' onClick={() => {
+							handleArrowClick('right');
+						}}>
+							<img src={carrouselArrow} alt='arrow' />
+						</button>
+						<CarrouselDotsContainer quantity={content.length} setActiveIndex={handleDotClick} activeIndex={activeIndex} />
+					</>
+					: <p>{content[0]}</p>
 			}
 		</div>
 	);
