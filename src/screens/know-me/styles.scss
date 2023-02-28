@@ -16,7 +16,7 @@
     gap: 1.5rem;
     img {    
       @include size(374px, 363px);
-      max-width: 100%;
+      align-self: center;
     }
     p {
       color: $--primary-dark-text;

@@ -1,7 +1,7 @@
 import {useState, type LegacyRef, useEffect} from 'react';
-import DropdownComponent from './components/dropdownComponent';
-import HeaderComponent from './components/headerComponent';
-import {useClickOutSide} from '@custom-hooks/useClickOutSide';
+import DropdownComponent from './components/dropdown-component';
+import HeaderComponent from './components/header-component';
+import {useClickOutSide} from '@custom-hooks/use-click-out-side';
 import './styles.scss';
 
 const Header = () => {
