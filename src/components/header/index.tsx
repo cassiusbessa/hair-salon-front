@@ -8,13 +8,17 @@ const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [resideUp, setResideUp] = useState(false);
 	const [opacity, setopacity] = useState(0);
+	const [display, setDisable] = useState('none');
 
 	useEffect(() => {
 		function handlerScroll() {
 			if ((window.scrollY / window.innerHeight) > 0.5) {
 				setopacity(window.scrollY / window.innerHeight);
+				setDisable('grid');
 			} else {
 				setopacity(0);
+				setDisable('none');
+				setIsOpen(false);
 			}
 		}
 
@@ -36,7 +40,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className={`header-dropdown-container ${resideUp ? 'resize-up' : ''}`} ref={domNode}>
+		<div className={`header-dropdown-container ${resideUp ? 'resize-up' : ''}`} style={{display}} ref={domNode}>
 			<HeaderComponent onClickHamburguer={handlerClickHamburguer} style={{opacity}} />
 			<DropdownComponent isOpen={isOpen}/>
 		</div>
