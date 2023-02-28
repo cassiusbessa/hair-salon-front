@@ -1,0 +1,30 @@
+@import '@styles/colors';
+
+.title-services {
+	align-items: center;
+	background-color: $--primary-light-green;
+	display: flex;
+	justify-content: space-between;
+	padding: 28px;
+	z-index: 1;
+
+	:nth-child(1){
+		font-size: 2.25rem;
+		color: white;
+	}
+
+	button {
+		border: none;
+		visibility: hidden;
+		transition: transform .5s ease-in-out;
+
+		svg {
+			cursor: pointer;
+			visibility: visible;
+		}
+	}
+}
+
+.rotate-180 {
+	transform: rotateZ(180deg);
+}

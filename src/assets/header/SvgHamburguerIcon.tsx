@@ -35,10 +35,10 @@ const SvgHamburguerIcon = (props: ISvgIcon) => {
 
 	return (
 		<svg
-			onMouseEnter={() => setIsHover(true)}
-			onMouseLeave={() => setIsHover(false)}
-			onMouseDown={() => setIsActive(true)}
-			onMouseUp={handlerMouseUp}
+		onMouseEnter={props.onHoverColor ? () => setIsHover(true) : undefined}
+		onMouseLeave={props.onHoverColor ? () => setIsHover(false) : undefined}
+		onMouseDown={props.onClickColor ? () => setIsActive(true) : undefined}
+		onMouseUp={props.onClickColor ? handlerMouseUp : undefined}
 			className={props.className ?? 'svg-hamburguer-icon'}
 			width={props.width ?? '70'}
 			height={props.width ?? '61'}

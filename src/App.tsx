@@ -5,6 +5,7 @@ import BookButton from '@components/book-button';
 import KnowMe from '@screens/know-me';
 import Header from '@components/header';
 import Speciality from '@screens/specialty';
+import DropdownService from '@components/dropdown-service';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 			<BookButton />
 			<KnowMe />
 			<Speciality />
+			<DropdownService />
 		</Provider>
 	);
 }
