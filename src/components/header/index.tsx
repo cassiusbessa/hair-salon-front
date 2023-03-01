@@ -6,7 +6,6 @@ import './styles.scss';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [resideUp, setResideUp] = useState(false);
 	const [opacity, setopacity] = useState(0);
 	const [display, setDisable] = useState('none');
 
@@ -30,17 +29,15 @@ const Header = () => {
 	}, []);
 
 	const domNode = useClickOutSide(() => {
-		setResideUp(false);
 		setIsOpen(false);
 	}) as LegacyRef<HTMLDivElement>;
 
 	const handlerClickHamburguer = () => {
-		setResideUp(!isOpen);
 		setIsOpen(!isOpen);
 	};
 
 	return (
-		<div className={`header-dropdown-container ${resideUp ? 'resize-up' : ''}`} style={{display}} ref={domNode}>
+		<div className='header-dropdown-container' style={{display}} ref={domNode}>
 			<HeaderComponent onClickHamburguer={handlerClickHamburguer} style={{opacity}} />
 			<DropdownComponent isOpen={isOpen}/>
 		</div>

@@ -2,12 +2,16 @@
 @import '../../../../styles/colors';
 
 .dropdown {
-	width: 100%;
 	background-color: $--primary-bg-black-translucent;
-	padding: 28px;
-	transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-	transform: rotate3d(1, 0, 0, 90deg);
+	max-height: 0;
+	overflow: hidden;
+	padding: 0 28px;
+	transition:
+		max-height .5s cubic-bezier(0.68, -0.6, 0.32, 1.6),
+		padding .5s cubic-bezier(0.68, -0.6, 0.32, 1.6)
+	;
 	transform-origin: top center;
+	width: 100%;
 	z-index: 3;
 
 	div, img {
@@ -23,6 +27,7 @@
 		font-weight: 700;
 		line-height: 36px;
 		padding-bottom: 28px;
+
 		:hover {
 			color: #75B5A0;
 		}
@@ -42,5 +47,6 @@
 }
 
 .open {
-	transform: rotate3d(0, 0, 0, 90deg);
+	padding: 28px;
+	max-height: 410px;
 }
