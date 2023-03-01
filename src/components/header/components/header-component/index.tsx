@@ -1,5 +1,5 @@
 import logo from '@assets/intro/logo.svg';
-import SvgHamburguerIcon from '@assets/header/SvgHamburguerIcon';
+import SvgHamburguerIcon from '@assets/header/svg-hamburguer-icon';
 import {primaryDarkGreen} from '@styles/inline-colors';
 import './style.scss';
 
