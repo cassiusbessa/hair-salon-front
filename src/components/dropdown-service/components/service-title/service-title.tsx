@@ -1,4 +1,4 @@
-import SvgArrowDropdownIcon from '@assets/dropdown-services/SvgArrowDropdownIcon';
+import SvgArrowDropdownIcon from '@assets/dropdown-services/svg-arrow-dropdown-icon';
 import './styles.scss';
 
 type Props = {
