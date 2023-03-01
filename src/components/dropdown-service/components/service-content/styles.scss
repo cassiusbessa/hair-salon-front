@@ -1,15 +1,17 @@
 .dropdown-service {
-	width: 100%;
-	transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	max-height: 0;
+	transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6), max-height .5s linear;
 	transform: rotate3d(1, 0, 0, 90deg);
 	transform-origin: top center;
+	width: 100%;
 
 	p {
-		padding: 28px;
+		padding: 28px 28px 0;
 		text-align: center;
 	}
 }
 
 .open-dropdown-service {
 	transform: rotate3d(0, 0, 0, 90deg);
+	max-height: 410px;
 }
