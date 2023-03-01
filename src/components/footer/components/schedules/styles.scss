@@ -1,0 +1,22 @@
+@import '@styles/colors';
+
+.footer-schedules {
+	background-color: $--primary-light-green;
+	color: $--primary-light-text;
+	padding: 28px;
+
+	h3 {
+		font-size: 1rem;
+		font-weight: 800;
+		height: 48px;
+		line-height: 48px;
+	}
+
+	div {
+		display: grid;
+		font-weight: 400;
+		gap: 22px 0;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+	}
+}

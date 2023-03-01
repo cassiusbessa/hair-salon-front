@@ -1,0 +1,24 @@
+@import '@styles/colors';
+
+.footer-contacts {
+	align-items: center;
+	background-color: $--primary-light-green;
+	color: $--primary-light-text;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 28px;
+
+	p:nth-child(1) {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+
+	div:nth-child(2) {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: .875rem;
+		font-weight: 700;
+	}
+}

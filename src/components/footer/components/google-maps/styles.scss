@@ -1,0 +1,9 @@
+@import '@styles/colors';
+
+.footer-google-maps {
+	align-items: center;
+	background-color: $--primary-light-green;
+	display: flex;
+	justify-content: center;
+	padding: 28px 5%;
+}

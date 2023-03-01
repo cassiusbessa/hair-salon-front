@@ -6,6 +6,7 @@ import KnowMe from '@screens/know-me';
 import Header from '@components/header';
 import Speciality from '@screens/specialty';
 import DropdownService from '@components/dropdown-service';
+import Footer from '@components/footer';
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			<KnowMe />
 			<Speciality />
 			<DropdownService />
+			<Footer />
 		</Provider>
 	);
 }
