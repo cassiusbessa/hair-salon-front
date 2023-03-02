@@ -4,19 +4,22 @@
 .nav-bar-container{
   @include flexAlignment(row, flex-start, center);
   gap: 28px;
+
   ul {
     @include flexAlignment(column, flex-start, flex-start);
     gap: 2rem;
     list-style: none;
+
     li {
-      line-height: 0.8;
-      display: inline-block;
+      animation: fadeInText 7s ease-in-out;
       color: $--secondary-light-text;
-      animation: fadeInText 7s ease-in-out;  
+      display: inline-block;
+      line-height: 0.8;
     }
+
     .booking {
+      color:$--primary-light-green;
       font-weight: 800;
-      color:$--primary-light-green
     }  
   }
 }
@@ -25,6 +28,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

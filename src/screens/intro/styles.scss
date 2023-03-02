@@ -5,39 +5,40 @@
 .intro-container {
   @include size(100%, 100vh);
   background-color: black;
-    .intro-content {
-    padding: 2rem 2rem 2rem 10%;
+
+  .intro-content {
     @include size(100%, 100%);
     display: grid;
     grid-template-columns: [screen-start] repeat(5, 1fr) [screen-end]; 
     grid-template-rows: [screen-top] 20% repeat(3, 1fr) 58px [screen-bottom];
-    .logo-container {
-      grid-area: logo;
-      z-index: 2;
+    padding: 2rem 2rem 2rem 10%;
+
+    .logo-container  {
       grid-column: screen;
       grid-row: screen-top;
-    };
-    .catch-phrase-container {
-      grid-area: catch-phrase;
       z-index: 2;
+    }
+
+    .catch-phrase-container {
       grid-column: screen;
       grid-row: 2;
-    };
-    .nav-bar-container {
-      grid-area: nav-bar;
       z-index: 2;
-      grid-column: screen;
-      grid-row: 3;
-    };
-    .social-media-icons-container {
-      grid-area: social-media-icons;
-      z-index: 2;
-      grid-column: screen-start;
-      grid-row: 5;
-      animation: fadeInText 7s ease-in-out;
-      align-self: end
     };
 
+    .nav-bar-container {
+      grid-area: nav-bar;
+      grid-column: screen;
+      grid-row: 3;
+      z-index: 2;
+    };
+
+    .social-media-icons-container {
+      animation: fadeInText 7s ease-in-out;
+      align-self: end;
+      grid-column: screen-start;
+      grid-row: 5;
+      z-index: 2;
+    };
   }
 }
 
@@ -46,9 +47,9 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
-  
 }
 
