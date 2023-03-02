@@ -1,6 +1,6 @@
 import logo from '@assets/intro/logo.svg';
-import SvgHamburguerIcon from '@assets/header/svg-hamburguer-icon';
 import {primaryDarkGreen} from '@styles/inline-colors';
+import SvgHamburguerIcon from '@assets/header/svg-hamburguer-icon';
 import './style.scss';
 
 type Props = {
@@ -10,8 +10,8 @@ type Props = {
 	style?: React.CSSProperties | undefined;
 };
 
-const HeaderComponent = ({onClickHamburguer, myRef, onScroll, style}: Props) => (
-	<header className='header' onScroll={onScroll} ref={myRef} style={style}>
+const HeaderMobile = ({onClickHamburguer, myRef, onScroll, style}: Props) => (
+	<header className='header-mobile' onScroll={onScroll} ref={myRef} style={style}>
 		<img src={logo} alt='Logo Icon' height='100%' />
 		<button onClick={onClickHamburguer}>
 			<SvgHamburguerIcon onClickColor={primaryDarkGreen} />
@@ -19,4 +19,4 @@ const HeaderComponent = ({onClickHamburguer, myRef, onScroll, style}: Props) => 
 	</header>
 );
 
-export default HeaderComponent;
+export default HeaderMobile;

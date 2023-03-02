@@ -14,19 +14,16 @@
 	width: 100%;
 	z-index: 3;
 
-	div, img {
-		cursor: pointer;
-	}
-
-	img:hover {
-		color: #75B5A0;
-	}
-
 	nav {
-		color: white;
-		font-weight: 700;
-		line-height: 36px;
 		padding-bottom: 28px;
+		
+		div {
+			color: white;
+			cursor: pointer;
+			font-size: 1rem;
+			font-weight: 700;
+			line-height: 36px;
+		}
 
 		:hover {
 			color: #75B5A0;
@@ -34,19 +31,29 @@
 
 		div:nth-last-child(1) {
 			color: #75B5A0;
-			text-transform: uppercase;
 			font-family: 'Jura';
+			font-size: 1.25rem;
 			font-weight: 400;
-			font-size: 20px;
+			text-transform: uppercase;
 		}
 
 		div:nth-last-child(1):hover {
 			font-size: 22px;
 		}
 	}
+
+	div:nth-last-child(1) img {
+		cursor: pointer;
+	}
 }
 
 .open {
 	padding: 28px;
 	max-height: 410px;
+}
+
+@media (min-width: 950px) {
+	.dropdown {
+		display: none;
+	}
 }

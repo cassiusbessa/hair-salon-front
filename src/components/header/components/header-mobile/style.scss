@@ -1,7 +1,7 @@
 @import '@styles/colors';
 @import '@styles/mixins';
 
-.header {
+.header-mobile {
 	@include size(100%, 79px);
 	background-color: $--primary-bg-black;
 	padding: 0 28px;
@@ -18,5 +18,11 @@
 			cursor: pointer;
 			visibility: visible;
 		}
+	}
+}
+
+@media (min-width: 950px) {
+	.header-mobile {
+		display: none;
 	}
 }

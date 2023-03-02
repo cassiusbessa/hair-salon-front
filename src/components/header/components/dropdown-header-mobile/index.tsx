@@ -5,7 +5,7 @@ type Props = {
 	isOpen: boolean;
 };
 
-const DropdownComponent = ({isOpen}: Props) => (
+const DropdownHeaderMobile = ({isOpen}: Props) => (
 	<div className={`dropdown ${isOpen ? 'open' : ''}`}>
 		<nav>
 			<div>Conheça-me</div>
@@ -19,4 +19,4 @@ const DropdownComponent = ({isOpen}: Props) => (
 	</div>
 );
 
-export default DropdownComponent;
+export default DropdownHeaderMobile;
