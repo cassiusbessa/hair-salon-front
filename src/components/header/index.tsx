@@ -6,16 +6,16 @@ import './styles.scss';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [opacity, setopacity] = useState(0);
+	const [opacity, setOpacity] = useState(0);
 	const [display, setDisable] = useState('none');
 
 	useEffect(() => {
 		function handlerScroll() {
 			if ((window.scrollY / window.innerHeight) > 0.5) {
-				setopacity(window.scrollY / window.innerHeight);
+				setOpacity(window.scrollY / window.innerHeight);
 				setDisable('grid');
 			} else {
-				setopacity(0);
+				setOpacity(0);
 				setDisable('none');
 				setIsOpen(false);
 			}
