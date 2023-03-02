@@ -12,8 +12,8 @@ function App() {
 	return (
 		<Provider store={store} >
 			<Header />
-			<Intro />
 			<BookButton />
+			<Intro />
 			<KnowMe />
 			<Speciality />
 			<DropdownService />

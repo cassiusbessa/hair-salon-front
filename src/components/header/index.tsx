@@ -1,8 +1,10 @@
 import {useState, type LegacyRef, useEffect} from 'react';
-import DropdownComponent from './components/dropdown-component';
-import HeaderComponent from './components/header-component';
 import {useClickOutSide} from '@custom-hooks/use-click-out-side';
 import './styles.scss';
+
+import DropdownHeaderMobile from './components/dropdown-header-mobile';
+import HeaderMobile from './components/header-mobile';
+import HeaderDesktop from './components/header-desktop/header-desktop';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +40,9 @@ const Header = () => {
 
 	return (
 		<div className='header-dropdown-container' style={{display}} ref={domNode}>
-			<HeaderComponent onClickHamburguer={handlerClickHamburguer} style={{opacity}} />
-			<DropdownComponent isOpen={isOpen}/>
+			<HeaderMobile onClickHamburguer={handlerClickHamburguer} style={{opacity}} />
+			<DropdownHeaderMobile isOpen={isOpen}/>
+			<HeaderDesktop style={{opacity}} />
 		</div>
 	);
 };
