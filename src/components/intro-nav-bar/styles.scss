@@ -8,13 +8,13 @@
   @media (min-width: 950px) {
     align-items: start;
     flex-direction: column;
-    gap: 28px;
+    gap: 1.6rem;
     margin-bottom: 58px;
   }
 
   ul {
     @include flexAlignment(column, flex-start, flex-start);
-    gap: 2rem;
+    gap: 1.6rem;
     list-style: none;
 
     li {
