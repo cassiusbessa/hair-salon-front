@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: [screen-start] repeat(5, 1fr) [screen-end]; 
     grid-template-rows: [screen-top] 20% repeat(3, 1fr) 58px [screen-bottom];
-    padding: 2rem 2rem 2rem 10%;
+    padding: 2rem 10%;
 
     .logo-container  {
       grid-column: screen;
@@ -23,13 +23,22 @@
       grid-column: screen;
       grid-row: 2;
       z-index: 2;
+
+      @media (min-width: 950px) {
+        grid-row: 4;
+      }
     };
 
     .nav-bar-container {
-      grid-area: nav-bar;
       grid-column: screen;
-      grid-row: 3;
+      grid-row: 3/5;
       z-index: 2;
+
+      @media (min-width: 950px) {
+        align-self: flex-end;
+        grid-column: 5;
+        grid-row: 2/4;
+      }
     };
 
     .social-media-icons-container {
@@ -38,6 +47,12 @@
       grid-column: screen-start;
       grid-row: 5;
       z-index: 2;
+
+      @media (min-width: 950px) {
+        align-self: flex-end;
+        grid-column: 5;
+        grid-row: 2/4;
+      }
     };
   }
 }
@@ -52,4 +67,3 @@
     opacity: 1;
   }
 }
-

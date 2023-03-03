@@ -3,7 +3,14 @@
 
 .nav-bar-container{
   @include flexAlignment(row, flex-start, center);
-  gap: 28px;
+  gap: 2%;
+
+  @media (min-width: 950px) {
+    align-items: start;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 58px;
+  }
 
   ul {
     @include flexAlignment(column, flex-start, flex-start);
@@ -15,12 +22,37 @@
       color: $--secondary-light-text;
       display: inline-block;
       line-height: 0.8;
+      font-weight: 400;
+
+      @media (min-width: 950px) {
+        font-weight: 600;
+      }
+    }
+
+    li:hover {
+      color:$--primary-light-green;
+      cursor: pointer;
     }
 
     .booking {
       color:$--primary-light-green;
-      font-weight: 800;
-    }  
+      font-family: 'jura';
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1rem;
+      width: max-content;
+
+      @media (min-width: 950px) {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+
+    .booking:hover {
+      cursor: pointer;
+      transform-origin: center center;
+      transform: scale(1.1);
+    }
   }
 }
 

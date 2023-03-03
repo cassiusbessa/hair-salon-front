@@ -6,9 +6,9 @@ $--default-br: 14px;
 
 @mixin flexAlignment($direction: row, $justify: center, $align: center) {
   display: flex;
-  flex-direction: $direction !important;
-  justify-content: $justify !important;
-  align-items: $align !important;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin size($wid: 100%, $heig: 100%) {

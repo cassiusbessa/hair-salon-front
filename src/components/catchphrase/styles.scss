@@ -3,18 +3,30 @@
 
 .catch-phrase-container {
   @include size(70%, 100%);
+
   p {
-    color: $--secondary-light-text;
-    font-size: 1.5rem;
-    display: inline-block;
-    font-weight: 800;
-    width: 18rem;
     animation: fadeInText 3.5s ease-in-out;
+    color: $--secondary-light-text;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 18rem;
+
     .highlighted-word {
       color: $--primary-light-green;
-      font-size: 1.5rem;
       display: inline-block;
-      font-weight: 800;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
+
+  @media (min-width: 950px) {
+    p {
+      width: 500px;
+    }
+
+    p, p > .highlighted-word {
+      font-size: 2.5rem;
     }
   }
 }
