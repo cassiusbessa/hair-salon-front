@@ -5,38 +5,52 @@
   @include size(100%, fit-content);
   @include flexAlignment(column, flex-start, flex-start);
   gap: 1.5rem;
-  padding: 4%;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 28px;
 
-  h1 {
+  h2 {
     color: $--primary-light-green;
-    font-size: 2.5rem;
+    font-size: 2rem;
+
+    @media (min-width: 950px) {
+      font-size: 2.5rem;
+    }
   }
 
   .know-me-content {
     @include size(100%, fit-content);
-    @include flexAlignment(column, flex-start, flex-start);
-    gap: 1.5rem;
+    display: grid;
+    gap: 28px;
+    justify-items: center;
+    margin: 0 auto;
 
-    img {    
-      width: 100%;
-      max-width: 475px;
+    @media (min-width: 950px) {
+      gap: 36px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 400px;
+    }
+
+    img {
       align-self: center;
+      max-width: 475px;
+      width: 100%;
+      
+      @media (min-width: 950px) {
+        grid-column: 1;
+        justify-self: center;
+        max-width: max-content;
+      }
     }
 
     p {
       color: $--primary-dark-text;
+      font-size: 1.375rem;
       line-height: 2rem;
-      font-size: 1.4rem;
-      overflow-wrap: break-word;
-      hyphens: auto;
-    }
 
-    @media only screen and (min-width: 768px) {
-      @include flexAlignment(row, center, center);
-      gap: 3rem;
-
-      .img {
-        height: 100%;
+      @media (min-width: 950px) {
+        align-self: center;
+        grid-column: 2;
       }
     }
   }
