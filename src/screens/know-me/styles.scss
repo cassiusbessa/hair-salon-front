@@ -6,18 +6,23 @@
   @include flexAlignment(column, flex-start, flex-start);
   gap: 1.5rem;
   padding: 4%;
+
   h1 {
     color: $--primary-light-green;
     font-size: 2.5rem;
   }
+
   .know-me-content {
     @include size(100%, fit-content);
     @include flexAlignment(column, flex-start, flex-start);
     gap: 1.5rem;
+
     img {    
-      @include size(374px, 363px);
+      width: 100%;
+      max-width: 475px;
       align-self: center;
     }
+
     p {
       color: $--primary-dark-text;
       line-height: 2rem;
@@ -25,9 +30,11 @@
       overflow-wrap: break-word;
       hyphens: auto;
     }
+
     @media only screen and (min-width: 768px) {
       @include flexAlignment(row, center, center);
       gap: 3rem;
+
       .img {
         height: 100%;
       }

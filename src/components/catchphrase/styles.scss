@@ -2,15 +2,13 @@
 @import '../../styles/mixins';
 
 .catch-phrase-container {
-  @include size(70%, 100%);
-
   p {
     animation: fadeInText 3.5s ease-in-out;
     color: $--secondary-light-text;
     display: inline-block;
     font-size: 1.2rem;
     font-weight: 700;
-    width: 18rem;
+    width: 15rem;
 
     .highlighted-word {
       color: $--primary-light-green;
