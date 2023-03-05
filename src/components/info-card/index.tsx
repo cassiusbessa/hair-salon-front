@@ -1,41 +1,18 @@
 import './styles.scss';
-import carrouselArrow from '@assets/info-card/arrow.svg';
-import CarrouselDotsContainer from './components/carrousel-dots-container';
-import {useCarousel} from '@custom-hooks/use-carousel';
 
 type Props = {
 	title: string;
 	content: string[];
-	isCarrousel?: boolean;
 };
 
-const InfoCard = ({title, content, isCarrousel}: Props) => {
-	const {activeIndex, handleDotClick, handleArrowClick} = useCarousel(content);
-
+const InfoCard = ({title, content}: Props) => {
 	return (
-		<div className='info-card-container'>
+		<section className='info-card-container'>
 			<div className='info-card-title' >
 				<h2>{title}</h2>
 			</div>
-			{
-				isCarrousel
-					? <>
-						<button type='button' className='left-arrow' onClick={() => {
-							handleArrowClick('left');
-						}}>
-							<img src={carrouselArrow} alt='arrow' />
-						</button>
-						<p className={isCarrousel ? 'carrousel-text' : ''}>{content[activeIndex]}</p>
-						<button type='button' className='right-arrow' onClick={() => {
-							handleArrowClick('right');
-						}}>
-							<img src={carrouselArrow} alt='arrow' />
-						</button>
-						<CarrouselDotsContainer quantity={content.length} setActiveIndex={handleDotClick} activeIndex={activeIndex} />
-					</>
-					: <p>{content[0]}</p>
-			}
-		</div>
+			<p>{content[0]}</p>
+		</section>
 	);
 };
 
