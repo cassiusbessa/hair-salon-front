@@ -3,13 +3,16 @@
 
 .know-me-container{
   @include size(100%, fit-content);
-  @include flexAlignment(column, flex-start, flex-start);
+  @include flexAlignment(column, flex-start, center);
   gap: 1.5rem;
-  margin: 0 auto;
   max-width: 1400px;
-  padding: 28px;
+
+  @media (min-width: 950px) {
+		grid-column: 1/3;
+	}
 
   h2 {
+    align-self: flex-start;
     color: $--primary-light-green;
     font-size: 2rem;
 
@@ -20,36 +23,38 @@
 
   .know-me-content {
     @include size(100%, fit-content);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 28px;
-    justify-items: center;
-    margin: 0 auto;
 
     @media (min-width: 950px) {
-      gap: 36px;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 400px;
+      align-items: center;
+      flex-direction: row;
     }
 
-    img {
-      align-self: center;
-      max-width: 475px;
-      width: 100%;
-      
+    .knowme-img-wraper {
+      max-width: 470px;
+      margin: auto;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+
       @media (min-width: 950px) {
-        grid-column: 1;
-        justify-self: center;
-        max-width: max-content;
+        height: 100%;
+        width: 40%;
       }
     }
 
     p {
+      width: 60%;
       color: $--primary-dark-text;
       font-size: 1.375rem;
-      line-height: 2rem;
 
       @media (min-width: 950px) {
-        align-self: center;
+        line-height: 2rem;
         grid-column: 2;
       }
     }

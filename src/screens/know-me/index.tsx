@@ -4,9 +4,15 @@ import './styles.scss';
 const KnowMe = () => (
 	<section className='know-me-container'>
 		<h2>Conheça-me</h2>
+
 		<div className='know-me-content'>
-			<img src={sulaPhoto} alt='Sula' />
+
+			<div className='knowme-img-wraper'>
+				<img src={sulaPhoto} alt='Sula' />
+			</div>
+
 			<p> Aqui nós iremos escrever dois parágrafos sobre a dona do salão. Contar sobre qualidades, cursos, experiencias e etc </p>
+
 		</div>
 	</section>
 );
