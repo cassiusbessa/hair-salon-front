@@ -1,0 +1,10 @@
+.img-speciality {
+	@media (min-width: 950px) {
+		grid-column: 1;
+		grid-row: 3 / span 3;
+	}
+	
+	img {
+		object-fit: cover;
+	}
+}
