@@ -1,0 +1,27 @@
+.carousel-gallery-wrapper {
+	overflow-x: auto;
+	-ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+	scrollbar-width: none;  /* Hide scrollbar for Firefox */
+
+	&::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari and Opera */
+		display: none;
+	}
+
+	.carousel-gallery {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 28px;
+
+		.carousel-item {
+			width: 250px;
+			height: 250px;
+			flex-shrink: 0;
+			opacity: 0.4;
+			transition: opacity 600ms ease-in-out;
+		}
+
+		.carousel-current-item {
+			opacity: 1;
+		}
+	}
+}

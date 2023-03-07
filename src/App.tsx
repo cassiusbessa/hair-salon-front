@@ -10,11 +10,12 @@ import GridWrapper from '@components/grid-wrapper';
 import InfoCard from '@components/info-card';
 import {content, title} from '@assets/speciality/text';
 import ImgSpeciality from '@components/img-speciality';
+import Carousel from '@components/carousel';
 
 function App() {
 	return (
 		<Provider store={store} >
-			<Header />
+			{/* <Header />
 			<BookButton />
 			<Intro />
 			<GridWrapper>
@@ -23,7 +24,8 @@ function App() {
 				<ImgSpeciality />
 			</GridWrapper>
 			<DropdownService />
-			<Footer />
+			<Footer /> */}
+			<Carousel />
 		</Provider>
 	);
 }
