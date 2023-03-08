@@ -2,9 +2,20 @@ import {useEffect, useState} from 'react';
 import GalleryWrapper from './components/gallery-wrapper/gallery-wrapper';
 import './styles.scss';
 
-const Carousel = () => {
+type ElementProps = {
+	addToRefs: (el: never) => void;
+	imageInfo: {link: string; alt: string};
+	index: number;
+};
+
+type Props = {
+	Element: ({addToRefs, imageInfo, index}: ElementProps) => JSX.Element;
+};
+
+const Carousel = ({Element}: Props) => {
 	const [currentItem, setCurrentItem] = useState(0);
 	const [maxItems, setMaxItems] = useState(0);
+	const [isFrozen, setIsFrozen] = useState(true);
 
 	const incraseCurrentItem = () => {
 		setCurrentItem(prevCurrentItem => {
@@ -31,24 +42,53 @@ const Carousel = () => {
 	useEffect(() => {
 		const items = document.querySelectorAll('.carousel-item');
 		setMaxItems(items.length);
+		// setIsFrozen(false);
+	}, []);
 
-		const repositionCurrentItem = () => {
-			items.forEach(item => {
-				item.classList.remove('carousel-current-item');
-			});
+	// useEffect(() => {
+	// 	const interval = setInterval(() => {
+	// 		incraseCurrentItem();
+	// 		console.log('set interval ativo');
+	// 	}, 3000);
 
-			items[currentItem].scrollIntoView({inline: 'center', behavior: 'smooth'});
-			items[currentItem].classList.add('carousel-current-item');
-		};
+	// 	if (isFrozen) clearInterval(interval);
 
-		repositionCurrentItem();
-	}, [currentItem]);
+	// 	return (() => {
+	// 		clearInterval(interval);
+	// 	});
+	// }, [isFrozen]);
+
+	const generateDots = () => {
+		const dots = [];
+		for (let index = 0; index < maxItems; index++) {
+			dots.push(<div className={index === currentItem ? 'current-dot' : ''}></div>);
+		}
+
+		return dots;
+	};
 
 	return (
-		<section className='carousel-container'>
-			<button className='carousel-arrow-left control' aria-label='Previous image' onClick={decraseCurrentItem}>{'<'}</button>
-			<button className='carousel-arrow-right control' aria-label='Next image' onClick={incraseCurrentItem}>{'>'}</button>
-			<GalleryWrapper />
+		<section className='carousel'>
+			<div
+				className='carousel-container'
+				onMouseEnter={() => {
+					setIsFrozen(true);
+				}}
+				onMouseLeave={() => {
+					setIsFrozen(false);
+				}}
+			>
+				<button className='carousel-arrow-left control' aria-label='Previous image' onClick={decraseCurrentItem}>{'<'}</button>
+				<button className='carousel-arrow-right control' aria-label='Next image' onClick={incraseCurrentItem}>{'>'}</button>
+				<GalleryWrapper currentItem={currentItem} Element={Element} />
+			</div>
+
+			<div className='carousel-footer'>
+				<p>Nossos trabalhos</p>
+				<div className='carousel-dots'>
+					{generateDots()}
+				</div>
+			</div>
 		</section>
 	);
 };

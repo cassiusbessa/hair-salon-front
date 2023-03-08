@@ -11,17 +11,5 @@
 		display: flex;
 		flex-flow: row nowrap;
 		gap: 28px;
-
-		.carousel-item {
-			width: 250px;
-			height: 250px;
-			flex-shrink: 0;
-			opacity: 0.4;
-			transition: opacity 600ms ease-in-out;
-		}
-
-		.carousel-current-item {
-			opacity: 1;
-		}
 	}
 }

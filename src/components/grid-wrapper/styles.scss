@@ -2,9 +2,12 @@ main {
 	display: grid;
 	padding: 28px;
 	gap: 28px;
+	justify-items: center;
+	max-width: 1400px;
+	margin: auto;
 
 	@media (min-width: 950px) {
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: min-content 50px repeat(2, min-content);
+		grid-template-rows: min-content 50px repeat(4, min-content);
 	}
 }

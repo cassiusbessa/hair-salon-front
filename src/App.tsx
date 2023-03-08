@@ -11,21 +11,22 @@ import InfoCard from '@components/info-card';
 import {content, title} from '@assets/speciality/text';
 import ImgSpeciality from '@components/img-speciality';
 import Carousel from '@components/carousel';
+import ImageForCarousel from '@components/image-for-carousel/image-for-carousel';
 
 function App() {
 	return (
 		<Provider store={store} >
-			{/* <Header />
+			<Header />
 			<BookButton />
 			<Intro />
 			<GridWrapper>
 				<KnowMe />
 				<InfoCard title={title} content={content}/>
 				<ImgSpeciality />
+				<Carousel Element={ImageForCarousel} />
 			</GridWrapper>
 			<DropdownService />
-			<Footer /> */}
-			<Carousel />
+			<Footer />
 		</Provider>
 	);
 }
