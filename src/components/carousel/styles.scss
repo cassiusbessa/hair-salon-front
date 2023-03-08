@@ -24,6 +24,7 @@
 		background: linear-gradient(to left, transparent 0%, black 200%);
 		opacity: 0.2;
 		transition: opacity 300ms ease-in-out;
+		z-index: 1;
 
 		&:hover {
 			opacity: 1;
