@@ -1,12 +1,13 @@
 main {
 	display: grid;
-	padding: 28px;
 	gap: 28px;
 	justify-items: center;
 	max-width: 1400px;
 	margin: auto;
-
+	margin-bottom: 28px;
+	
 	@media (min-width: 950px) {
+		padding: 0 28px;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: min-content 50px repeat(4, min-content);
 	}

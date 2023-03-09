@@ -3,7 +3,7 @@
 
 .nav-bar-container{
   @include flexAlignment(row, flex-start, center);
-  gap: 2%;
+  gap: 4%;
 
   @media (min-width: 950px) {
     align-items: start;
@@ -38,7 +38,7 @@
       color:$--primary-light-green;
       font-family: 'jura';
       font-weight: 400;
-      font-size: 1rem;
+      font-size: .9rem;
       line-height: 1rem;
       width: max-content;
 
