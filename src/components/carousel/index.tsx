@@ -92,7 +92,6 @@ const Carousel = ({Element}: Props) => {
 					currentItem={currentItem}
 					Element={Element}
 					setCurrentItem={setCurrentItem}
-					maxItems={maxItems}
 					setMaxItems={setMaxItems}
 				/>
 			</div>

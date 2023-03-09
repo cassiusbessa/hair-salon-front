@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react';
 import './styles.scss';
 
-const images = [
+const items = [
 	{link: 'https://source.unsplash.com/random/250x250?animal', alt: 'Animal Image'},
 	{link: 'https://source.unsplash.com/random/250x250?nature', alt: 'Nature Image'},
 	{link: 'https://source.unsplash.com/random/250x250?beach', alt: 'Beach Image'},
@@ -19,29 +19,26 @@ type Props = {
 	currentItem: number;
 	Element: ({addToRefs, imageInfo, index}: ElementProps) => JSX.Element;
 	setCurrentItem: React.Dispatch<React.SetStateAction<number>>;
-	maxItems: number;
 	setMaxItems: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const GalleryWrapper = ({currentItem, Element, setCurrentItem, maxItems, setMaxItems}: Props) => {
+const GalleryWrapper = ({currentItem, Element, setCurrentItem, setMaxItems}: Props) => {
 	const wrapperRef = useRef(null);
 
 	const itemsRefs = useRef([]);
 	itemsRefs.current = [];
 
+	useEffect(() => {
+		setMaxItems(items.length);
+	}, []);
+
 	const updateCurrentItem = () => {
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
 		const itemElement: HTMLImageElement = itemsRefs.current[currentItem];
 
-		const oi = Math.round(wrapperElement.scrollLeft / itemElement.width);
-		console.log(oi);
-		setCurrentItem(oi);
+		const newCurrentItem = Math.round(wrapperElement.scrollLeft / itemElement.width);
+		setCurrentItem(newCurrentItem);
 	};
-
-	useEffect(() => {
-		const items = document.querySelectorAll('.carousel-item');
-		setMaxItems(items.length);
-	}, []);
 
 	const addToRefs = (el: never) => {
 		if (el && !itemsRefs.current.includes(el)) {
@@ -56,15 +53,17 @@ const GalleryWrapper = ({currentItem, Element, setCurrentItem, maxItems, setMaxI
 		wrapperElement.scrollLeft = (itemElement.clientWidth * currentItem);
 	}, [currentItem]);
 
+	const handlerOnTouchEnd = () => {
+		setTimeout(() => {
+			updateCurrentItem();
+		}, 1000);
+	};
+
 	return (
-		<div className='carousel-gallery-wrapper' ref={wrapperRef} onTouchEnd={() => {
-			setTimeout(() => {
-				updateCurrentItem();
-			}, 1000);
-		}}>
+		<div className='carousel-gallery-wrapper' ref={wrapperRef} onTouchEnd={handlerOnTouchEnd}>
 			<div className='carousel-gallery'>
 				{
-					images.map((item, index) => (
+					items.map((item, index) => (
 						<Element addToRefs={addToRefs} imageInfo={item} index={index} key={index} />
 					))
 				}
