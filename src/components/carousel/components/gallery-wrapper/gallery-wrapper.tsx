@@ -18,30 +18,50 @@ type ElementProps = {
 type Props = {
 	currentItem: number;
 	Element: ({addToRefs, imageInfo, index}: ElementProps) => JSX.Element;
+	setCurrentItem: React.Dispatch<React.SetStateAction<number>>;
+	maxItems: number;
+	setMaxItems: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const GalleryWrapper = ({currentItem, Element}: Props) => {
-	const revealRefs = useRef([]);
-	revealRefs.current = [];
+const GalleryWrapper = ({currentItem, Element, setCurrentItem, maxItems, setMaxItems}: Props) => {
+	const wrapperRef = useRef(null);
+
+	const itemsRefs = useRef([]);
+	itemsRefs.current = [];
+
+	const updateCurrentItem = () => {
+		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
+		const itemElement: HTMLImageElement = itemsRefs.current[currentItem];
+
+		const oi = Math.round(wrapperElement.scrollLeft / itemElement.width);
+		console.log(oi);
+		setCurrentItem(oi);
+	};
+
+	useEffect(() => {
+		const items = document.querySelectorAll('.carousel-item');
+		setMaxItems(items.length);
+	}, []);
 
 	const addToRefs = (el: never) => {
-		if (el && !revealRefs.current.includes(el)) {
-			revealRefs.current.push(el);
+		if (el && !itemsRefs.current.includes(el)) {
+			itemsRefs.current.push(el);
 		}
 	};
 
 	useEffect(() => {
-		revealRefs.current.forEach((element: HTMLImageElement) => {
-			element.classList.remove('carousel-current-item');
-		});
+		const itemElement: HTMLImageElement = itemsRefs.current[currentItem];
+		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
 
-		const element: HTMLImageElement = revealRefs.current[currentItem];
-		element.scrollIntoView({inline: 'center', behavior: 'smooth'});
-		element.classList.add('carousel-current-item');
+		wrapperElement.scrollLeft = (itemElement.clientWidth * currentItem);
 	}, [currentItem]);
 
 	return (
-		<div className='carousel-gallery-wrapper'>
+		<div className='carousel-gallery-wrapper' ref={wrapperRef} onTouchEnd={() => {
+			setTimeout(() => {
+				updateCurrentItem();
+			}, 1000);
+		}}>
 			<div className='carousel-gallery'>
 				{
 					images.map((item, index) => (

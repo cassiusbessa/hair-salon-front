@@ -1,4 +1,6 @@
 .carousel-gallery-wrapper {
+	scroll-snap-type: x;
+	scroll-behavior: smooth;
 	overflow-x: auto;
 	-ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
 	scrollbar-width: none;  /* Hide scrollbar for Firefox */
@@ -10,6 +12,5 @@
 	.carousel-gallery {
 		display: flex;
 		flex-flow: row nowrap;
-		gap: 28px;
 	}
 }

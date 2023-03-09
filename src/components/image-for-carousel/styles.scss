@@ -1,11 +1,8 @@
 .carousel-item {
 	width: 100%;
-	object-fit: contain;
+	max-height: 400px;
+	object-fit: cover;
 	flex-shrink: 0;
-	opacity: 0.4;
-	transition: opacity 600ms ease-in-out;
-}
-
-.carousel-current-item {
 	opacity: 1;
+	scroll-snap-align: center;
 }

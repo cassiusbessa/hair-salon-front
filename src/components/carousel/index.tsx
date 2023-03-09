@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import {useEffect, useState} from 'react';
 import GalleryWrapper from './components/gallery-wrapper/gallery-wrapper';
 import './styles.scss';
@@ -17,7 +18,11 @@ const Carousel = ({Element}: Props) => {
 	const [maxItems, setMaxItems] = useState(0);
 	const [isFrozen, setIsFrozen] = useState(true);
 
-	const incraseCurrentItem = () => {
+	useEffect(() => {
+		setIsFrozen(false);
+	}, []);
+
+	const increaseCurrentItem = () => {
 		setCurrentItem(prevCurrentItem => {
 			let currentItem = prevCurrentItem + 1;
 			if (currentItem >= maxItems) {
@@ -40,28 +45,21 @@ const Carousel = ({Element}: Props) => {
 	};
 
 	useEffect(() => {
-		const items = document.querySelectorAll('.carousel-item');
-		setMaxItems(items.length);
-		// setIsFrozen(false);
-	}, []);
+		const interval = setInterval(() => {
+			increaseCurrentItem();
+		}, 5000);
 
-	// useEffect(() => {
-	// 	const interval = setInterval(() => {
-	// 		incraseCurrentItem();
-	// 		console.log('set interval ativo');
-	// 	}, 3000);
+		if (isFrozen) clearInterval(interval);
 
-	// 	if (isFrozen) clearInterval(interval);
-
-	// 	return (() => {
-	// 		clearInterval(interval);
-	// 	});
-	// }, [isFrozen]);
+		return (() => {
+			clearInterval(interval);
+		});
+	}, [isFrozen]);
 
 	const generateDots = () => {
 		const dots = [];
-		for (let index = 0; index < maxItems; index++) {
-			dots.push(<div className={index === currentItem ? 'current-dot' : ''}></div>);
+		for (let i = 0; i < maxItems; i++) {
+			dots.push(<div key={i} onClick={() => setCurrentItem(i)} className={i === currentItem ? 'current-dot' : ''}></div>);
 		}
 
 		return dots;
@@ -77,10 +75,26 @@ const Carousel = ({Element}: Props) => {
 				onMouseLeave={() => {
 					setIsFrozen(false);
 				}}
+				onTouchStart={() => {
+					setIsFrozen(true);
+				}}
+				onTouchEnd={() => {
+					setIsFrozen(false);
+				}}
 			>
-				<button className='carousel-arrow-left control' aria-label='Previous image' onClick={decraseCurrentItem}>{'<'}</button>
-				<button className='carousel-arrow-right control' aria-label='Next image' onClick={incraseCurrentItem}>{'>'}</button>
-				<GalleryWrapper currentItem={currentItem} Element={Element} />
+				<button className='carousel-arrow-left control' aria-label='Previous item' onClick={decraseCurrentItem}>
+					{'<'}
+				</button>
+				<button className='carousel-arrow-right control' aria-label='Next item' onClick={increaseCurrentItem}>
+					{'>'}
+				</button>
+				<GalleryWrapper
+					currentItem={currentItem}
+					Element={Element}
+					setCurrentItem={setCurrentItem}
+					maxItems={maxItems}
+					setMaxItems={setMaxItems}
+				/>
 			</div>
 
 			<div className='carousel-footer'>
