@@ -2,7 +2,7 @@
 @import '@styles/mixins';
 
 .header-mobile {
-	@include size(100%, 79px);
+	@include size(100%, 50px);
 	background-color: $--primary-bg-black;
 	padding: 0 28px;
 	display: flex;
