@@ -41,8 +41,6 @@
         "react/react-in-jsx-scope": "off",
         "arrow-body-style": "off",
         "capitalized-comments": "off",
-        "@typescript-eslint/ban-types": "off",
-        "eslint-disable @typescript-eslint/no-confusing-void-expression": "off",
         "curly": "off"
     }
 }
