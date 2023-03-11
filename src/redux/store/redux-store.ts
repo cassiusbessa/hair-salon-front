@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 import counterReducer from '@states/count';
+import carouselImagesReducer from '@states/carousel-images';
 
 export const store = configureStore({
 	reducer: {
 		counter: counterReducer,
+		carouselImages: carouselImagesReducer,
 	},
 });
 
