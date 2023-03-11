@@ -1,7 +1,7 @@
 import './styles.scss';
 import {type ElementCarouselItems} from '@components/carousel';
 
-const ImageForCarousel = ({addToRefs, elementInfo, index}: ElementCarouselItems) => {
+const CarouselImageItem = ({addToRefs, elementInfo, index}: ElementCarouselItems) => {
 	return (
 		<img
 			key={elementInfo.content}
@@ -14,4 +14,4 @@ const ImageForCarousel = ({addToRefs, elementInfo, index}: ElementCarouselItems)
 	);
 };
 
-export default ImageForCarousel;
+export default CarouselImageItem;
