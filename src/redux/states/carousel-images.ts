@@ -1,13 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
-export type CounterState = {
+export type CarouselImagesState = {
 	currentItem: number;
 	maxItems: number;
 	isFrozen: boolean;
 };
 
-const initialState: CounterState = {
+const initialState: CarouselImagesState = {
 	currentItem: 0,
 	maxItems: 0,
 	isFrozen: false,
