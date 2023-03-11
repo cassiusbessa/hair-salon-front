@@ -3,7 +3,7 @@ import {useEffect} from 'react';
 import GalleryWrapper from './components/gallery-wrapper/gallery-wrapper';
 import './styles.scss';
 import {useDispatch, useSelector} from 'react-redux';
-import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen} from '../../redux/states/carousel-images';
+import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen} from '@states/carousel-images';
 import {type RootState} from '@store/redux-store';
 
 const items = [
