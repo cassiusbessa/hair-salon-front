@@ -44,38 +44,3 @@
 		left: auto;
 	}
 }
-
-.carousel-footer {
-	background-color: $--primary-light-green;
-	width: 100%;
-	min-height: 88px;
-	height: 88px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-evenly;
-
-	p {
-		color: $--primary-light-text;
-		font-size: 1.4rem;
-	}
-
-	.carousel-dots {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 10px;
-
-		div {
-			background-color: rgba(255, 255, 255, 0.438);
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-		}
-
-		.current-dot {
-			background-color: white;
-		}
-	}
-}

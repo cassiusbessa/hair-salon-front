@@ -1,106 +1,76 @@
 /* eslint-disable @typescript-eslint/no-confusing-void-expression */
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import GalleryWrapper from './components/gallery-wrapper/gallery-wrapper';
 import './styles.scss';
+import {useDispatch, useSelector} from 'react-redux';
+import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen} from '../../redux/states/carousel-images';
+import {type RootState} from '@store/redux-store';
 
-type ElementProps = {
+const items = [
+	{content: 'https://source.unsplash.com/random/250x250?animal', alt: 'Animal Image'},
+	{content: 'https://source.unsplash.com/random/250x250?nature', alt: 'Nature Image'},
+	{content: 'https://source.unsplash.com/random/250x250?beach', alt: 'Beach Image'},
+	{content: 'https://source.unsplash.com/random/250x250?night', alt: 'Night Image'},
+	{content: 'https://source.unsplash.com/random/250x250?street', alt: 'Street Image'},
+];
+
+export type ElementCarouselItems = {
 	addToRefs: (el: never) => void;
-	imageInfo: {link: string; alt: string};
+	elementInfo: {content: string; alt?: string};
 	index: number;
 };
 
 type Props = {
-	Element: ({addToRefs, imageInfo, index}: ElementProps) => JSX.Element;
+	Element: ({addToRefs, elementInfo, index}: ElementCarouselItems) => JSX.Element;
 };
 
 const Carousel = ({Element}: Props) => {
-	const [currentItem, setCurrentItem] = useState(0);
-	const [maxItems, setMaxItems] = useState(0);
-	const [isFrozen, setIsFrozen] = useState(true);
+	const carouselImages = useSelector((state: RootState) => state.carouselImages);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		setIsFrozen(false);
+		dispatch(setMaxItems(items.length));
 	}, []);
-
-	const increaseCurrentItem = () => {
-		setCurrentItem(prevCurrentItem => {
-			let currentItem = prevCurrentItem + 1;
-			if (currentItem >= maxItems) {
-				currentItem = 0;
-			}
-
-			return currentItem;
-		});
-	};
-
-	const decraseCurrentItem = () => {
-		setCurrentItem(prevCurrentItem => {
-			let currentItem = prevCurrentItem - 1;
-			if (currentItem < 0) {
-				currentItem = maxItems - 1;
-			}
-
-			return currentItem;
-		});
-	};
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			increaseCurrentItem();
-		}, 5000);
+			dispatch(incrementCurrentItems());
+		}, 3000);
 
-		if (isFrozen) clearInterval(interval);
+		if (carouselImages.isFrozen) clearInterval(interval);
 
 		return (() => {
 			clearInterval(interval);
 		});
-	}, [isFrozen]);
-
-	const generateDots = () => {
-		const dots = [];
-		for (let i = 0; i < maxItems; i++) {
-			dots.push(<div key={i} onClick={() => setCurrentItem(i)} className={i === currentItem ? 'current-dot' : ''}></div>);
-		}
-
-		return dots;
-	};
+	}, [carouselImages.isFrozen, carouselImages.maxItems]);
 
 	return (
 		<section className='carousel'>
 			<div
 				className='carousel-container'
-				onMouseEnter={() => {
-					setIsFrozen(true);
-				}}
-				onMouseLeave={() => {
-					setIsFrozen(false);
-				}}
-				onTouchStart={() => {
-					setIsFrozen(true);
-				}}
-				onTouchEnd={() => {
-					setIsFrozen(false);
-				}}
+				onMouseEnter={() => dispatch(setIsFrozen(true))}
+				onMouseLeave={() => dispatch(setIsFrozen(false))}
+				onTouchStart={() => dispatch(setIsFrozen(true))}
+				onTouchEnd={() => dispatch(setIsFrozen(false))}
 			>
-				<button className='carousel-arrow-left control' aria-label='Previous item' onClick={decraseCurrentItem}>
+				<button
+					className='carousel-arrow-left control'
+					aria-label='Previous item'
+					onClick={() => dispatch(decrementCurrentItems())}
+				>
 					{'<'}
 				</button>
-				<button className='carousel-arrow-right control' aria-label='Next item' onClick={increaseCurrentItem}>
+				<button
+					className='carousel-arrow-right control'
+					aria-label='Next item'
+					onClick={() => dispatch(incrementCurrentItems())}
+				>
 					{'>'}
 				</button>
 				<GalleryWrapper
-					currentItem={currentItem}
 					Element={Element}
-					setCurrentItem={setCurrentItem}
-					setMaxItems={setMaxItems}
+					items={items}
 				/>
-			</div>
-
-			<div className='carousel-footer'>
-				<p>Nossos trabalhos</p>
-				<div className='carousel-dots'>
-					{generateDots()}
-				</div>
 			</div>
 		</section>
 	);
