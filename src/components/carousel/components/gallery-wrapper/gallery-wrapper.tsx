@@ -1,17 +1,17 @@
 import {useEffect, useRef} from 'react';
 import './styles.scss';
-import {type ElementCarouselItems} from '@components/carousel';
+import {type CarouselActions, type CarouselStates, type ElementCarouselItems} from '@components/carousel';
 import {useDispatch, useSelector} from 'react-redux';
 import {setCurrentItem} from '@states/carousel-images';
-import {type RootState} from '@store/redux-store';
 
 type Props = {
 	Element: ({addToRefs, elementInfo, index}: ElementCarouselItems) => JSX.Element;
 	items: Array<{content: string; alt?: string}>;
+	states: CarouselStates;
+	actions: CarouselActions;
 };
 
-const GalleryWrapper = ({Element, items}: Props) => {
-	const carouselImages = useSelector((state: RootState) => state.carouselImages);
+const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 	const dispatch = useDispatch();
 
 	const wrapperRef = useRef(null);
@@ -19,10 +19,10 @@ const GalleryWrapper = ({Element, items}: Props) => {
 
 	const updateCurrentItem = () => {
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
-		const itemElement: HTMLImageElement = itemsRefs.current[carouselImages.currentItem];
+		const itemElement: HTMLImageElement = itemsRefs.current[states.currentItem];
 
 		const newCurrentItem = Math.round(wrapperElement.scrollLeft / itemElement.width);
-		dispatch(setCurrentItem(newCurrentItem));
+		dispatch(actions.setCurrentItem(newCurrentItem));
 	};
 
 	const addToRefs = (el: never) => {
@@ -32,11 +32,11 @@ const GalleryWrapper = ({Element, items}: Props) => {
 	};
 
 	useEffect(() => {
-		const itemElement: HTMLImageElement = itemsRefs.current[carouselImages.currentItem];
+		const itemElement: HTMLImageElement = itemsRefs.current[states.currentItem];
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
 
-		wrapperElement.scrollLeft = (itemElement.clientWidth * carouselImages.currentItem);
-	}, [carouselImages.currentItem]);
+		wrapperElement.scrollLeft = (itemElement.clientWidth * states.currentItem);
+	}, [states.currentItem]);
 
 	const handlerOnTouchEnd = () => {
 		setTimeout(() => {
