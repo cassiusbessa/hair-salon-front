@@ -1,4 +1,4 @@
-import {store} from '@store/ReduxStore';
+import {store} from '@store/redux-store';
 import {Provider} from 'react-redux';
 import Intro from '@screens/intro';
 import BookButton from '@components/book-button';
@@ -10,8 +10,7 @@ import GridWrapper from '@components/grid-wrapper';
 import InfoCard from '@components/info-card';
 import {content, title} from '@assets/speciality/text';
 import ImgSpeciality from '@components/img-speciality';
-import Carousel from '@components/carousel';
-import ImageForCarousel from '@components/image-for-carousel/image-for-carousel';
+import OurWorks from '@components/our-works';
 
 function App() {
 	return (
@@ -23,7 +22,7 @@ function App() {
 				<KnowMe />
 				<InfoCard title={title} content={content}/>
 				<ImgSpeciality />
-				<Carousel Element={ImageForCarousel} />
+				<OurWorks />
 			</GridWrapper>
 			<DropdownService />
 			<Footer />
