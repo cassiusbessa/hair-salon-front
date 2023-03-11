@@ -2,17 +2,22 @@
 import {useEffect} from 'react';
 import GalleryWrapper from './components/gallery-wrapper/gallery-wrapper';
 import './styles.scss';
-import {useDispatch, useSelector} from 'react-redux';
-import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen} from '@states/carousel-images';
-import {type RootState} from '@store/redux-store';
+import {useDispatch} from 'react-redux';
+import {type ActionCreatorWithPayload, type ActionCreatorWithoutPayload} from '@reduxjs/toolkit';
 
-const items = [
-	{content: 'https://source.unsplash.com/random/250x250?animal', alt: 'Animal Image'},
-	{content: 'https://source.unsplash.com/random/250x250?nature', alt: 'Nature Image'},
-	{content: 'https://source.unsplash.com/random/250x250?beach', alt: 'Beach Image'},
-	{content: 'https://source.unsplash.com/random/250x250?night', alt: 'Night Image'},
-	{content: 'https://source.unsplash.com/random/250x250?street', alt: 'Street Image'},
-];
+export type CarouselActions = {
+	incrementCurrentItems: ActionCreatorWithoutPayload;
+	decrementCurrentItems: ActionCreatorWithoutPayload;
+	setMaxItems: ActionCreatorWithPayload<number>;
+	setIsFrozen: ActionCreatorWithPayload<boolean>;
+	setCurrentItem: ActionCreatorWithPayload<number>;
+};
+
+export type CarouselStates = {
+	currentItem: number;
+	maxItems: number;
+	isFrozen: boolean;
+};
 
 export type ElementCarouselItems = {
 	addToRefs: (el: never) => void;
@@ -22,57 +27,59 @@ export type ElementCarouselItems = {
 
 type Props = {
 	Element: ({addToRefs, elementInfo, index}: ElementCarouselItems) => JSX.Element;
+	states: CarouselStates;
+	actions: CarouselActions;
+	items: Array<{content: string; alt: string}>;
 };
 
-const Carousel = ({Element}: Props) => {
-	const carouselImages = useSelector((state: RootState) => state.carouselImages);
+const Carousel = ({Element, states, actions, items}: Props) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(setMaxItems(items.length));
+		dispatch(actions.setMaxItems(items.length));
 	}, []);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			dispatch(incrementCurrentItems());
+			dispatch(actions.incrementCurrentItems());
 		}, 3000);
 
-		if (carouselImages.isFrozen) clearInterval(interval);
+		if (states.isFrozen) clearInterval(interval);
 
 		return (() => {
 			clearInterval(interval);
 		});
-	}, [carouselImages.isFrozen, carouselImages.maxItems]);
+	}, [states.isFrozen, states.maxItems]);
 
 	return (
-		<section className='carousel'>
-			<div
-				className='carousel-container'
-				onMouseEnter={() => dispatch(setIsFrozen(true))}
-				onMouseLeave={() => dispatch(setIsFrozen(false))}
-				onTouchStart={() => dispatch(setIsFrozen(true))}
-				onTouchEnd={() => dispatch(setIsFrozen(false))}
+		<div
+			className='carousel'
+			onMouseEnter={() => dispatch(actions.setIsFrozen(true))}
+			onMouseLeave={() => dispatch(actions.setIsFrozen(false))}
+			onTouchStart={() => dispatch(actions.setIsFrozen(true))}
+			onTouchEnd={() => dispatch(actions.setIsFrozen(false))}
+		>
+			<button
+				className='carousel-arrow-left control'
+				aria-label='Previous item'
+				onClick={() => dispatch(actions.decrementCurrentItems())}
 			>
-				<button
-					className='carousel-arrow-left control'
-					aria-label='Previous item'
-					onClick={() => dispatch(decrementCurrentItems())}
-				>
-					{'<'}
-				</button>
-				<button
-					className='carousel-arrow-right control'
-					aria-label='Next item'
-					onClick={() => dispatch(incrementCurrentItems())}
-				>
-					{'>'}
-				</button>
-				<GalleryWrapper
-					Element={Element}
-					items={items}
-				/>
-			</div>
-		</section>
+				{'<'}
+			</button>
+			<button
+				className='carousel-arrow-right control'
+				aria-label='Next item'
+				onClick={() => dispatch(actions.incrementCurrentItems())}
+			>
+				{'>'}
+			</button>
+			<GalleryWrapper
+				Element={Element}
+				items={items}
+				states={states}
+				actions={actions}
+			/>
+		</div>
 	);
 };
 

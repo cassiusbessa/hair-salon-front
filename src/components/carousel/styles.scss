@@ -1,18 +1,8 @@
 @import '../../styles/colors';
 
 .carousel {
-	max-width: 100%;
-	height: fit-content;
-	display: flex;
-	flex-direction: column;
-
-	@media (min-width: 950px) {
-		grid-column: 2;
-		grid-row: 4 / 7;
-	}
-}
-
-.carousel-container {
+	max-height: 400px;
+	width: 100%;
 	position: relative;
 	margin: auto;
 
