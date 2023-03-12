@@ -1,15 +1,14 @@
 import './styles.scss';
 import {type ElementCarouselItems} from '@components/carousel';
 
-const CarouselImageItem = ({addToRefs, elementInfo, index}: ElementCarouselItems) => {
+const CarouselImageItem = ({elementInfo, index}: ElementCarouselItems) => {
 	return (
 		<img
-			key={elementInfo.content}
-			className={`carousel-item ${index === 0 ? 'carousel-current-item' : ''}`}
+			className='carousel-image-item'
 			src={elementInfo.content}
 			alt={elementInfo.alt}
-			ref={addToRefs}
 			loading='lazy'
+			width='100%'
 		/>
 	);
 };

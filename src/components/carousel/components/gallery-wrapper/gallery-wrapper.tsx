@@ -2,10 +2,9 @@ import {useEffect, useRef} from 'react';
 import './styles.scss';
 import {type CarouselActions, type CarouselStates, type ElementCarouselItems} from '@components/carousel';
 import {useDispatch, useSelector} from 'react-redux';
-import {setCurrentItem} from '@states/carousel-images';
 
 type Props = {
-	Element: ({addToRefs, elementInfo, index}: ElementCarouselItems) => JSX.Element;
+	Element: ({elementInfo, index}: ElementCarouselItems) => JSX.Element;
 	items: Array<{content: string; alt?: string}>;
 	states: CarouselStates;
 	actions: CarouselActions;
@@ -32,11 +31,12 @@ const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 	};
 
 	useEffect(() => {
-		const itemElement: HTMLImageElement = itemsRefs.current[states.currentItem];
+		const itemElement: HTMLDivElement = itemsRefs.current[states.currentItem];
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
+		// console.log(itemElement.offsetWidth);
 
-		wrapperElement.scrollLeft = (itemElement.clientWidth * states.currentItem);
-	}, [states.currentItem]);
+		wrapperElement.scrollLeft = ((itemElement.clientWidth || itemElement.offsetWidth) * states.currentItem);
+	}, [states.currentItem, states.maxItems]);
 
 	const handlerOnTouchEnd = () => {
 		setTimeout(() => {
@@ -49,7 +49,13 @@ const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 			<div className='carousel-gallery'>
 				{
 					items.map((item, index) => (
-						<Element addToRefs={addToRefs} elementInfo={item} index={index} key={index} />
+						<div
+							key={item.content}
+							ref={addToRefs}
+							className={`carousel-item ${index === 0 ? 'carousel-current-item' : ''}`}
+						>
+							<Element elementInfo={item} index={index} />
+						</div>
 					))
 				}
 			</div>

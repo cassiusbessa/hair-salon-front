@@ -11,6 +11,7 @@ import InfoCard from '@components/info-card';
 import {content, title} from '@assets/speciality/text';
 import ImgSpeciality from '@components/img-speciality';
 import OurWorks from '@components/our-works';
+import Testimonials from '@components/testimonials';
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 				<InfoCard title={title} content={content}/>
 				<ImgSpeciality />
 				<OurWorks />
+				<Testimonials />
 			</GridWrapper>
 			<DropdownService />
 			<Footer />

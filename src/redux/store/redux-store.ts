@@ -1,11 +1,13 @@
 import {configureStore} from '@reduxjs/toolkit';
 import counterReducer from '@states/count';
-import carouselImagesReducer from '@states/carousel-images';
+import ourWorksReducer from '@states/our-works-reducer';
+import testimonialsReducer from '@states/testimonials-reducer';
 
 export const store = configureStore({
 	reducer: {
 		counter: counterReducer,
-		carouselImages: carouselImagesReducer,
+		ourWorks: ourWorksReducer,
+		testimonials: testimonialsReducer,
 	},
 });
 

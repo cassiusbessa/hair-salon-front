@@ -2,7 +2,7 @@ import Carousel from '@components/carousel';
 import './styles.scss';
 import CarouselImageItem from '@components/carousel-image-item';
 import {useSelector} from 'react-redux';
-import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} from '@states/carousel-images';
+import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} from '@states/our-works-reducer';
 import {type RootState} from '@store/redux-store';
 import CarouselDots from '@components/carousel-dots';
 
@@ -15,8 +15,8 @@ const items = [
 ];
 
 const OurWorks = () => {
-	const carouselImagesStates = useSelector((state: RootState) => state.carouselImages);
-	const carouselImagesActions = {
+	const ourWorksStates = useSelector((state: RootState) => state.ourWorks);
+	const ourWorksActions = {
 		incrementCurrentItems,
 		decrementCurrentItems,
 		setMaxItems,
@@ -25,18 +25,18 @@ const OurWorks = () => {
 	};
 
 	return (
-		<section className='our-works-carousel'>
+		<div className='our-works-carousel'>
 			<Carousel
 				Element={CarouselImageItem}
-				states={carouselImagesStates}
-				actions={carouselImagesActions}
+				states={ourWorksStates}
+				actions={ourWorksActions}
 				items={items}
 			/>
 			<div className='carousel-images-footer'>
 				<p>Nossos trabalhos</p>
-				<CarouselDots actions={carouselImagesActions} states={carouselImagesStates} />
+				<CarouselDots actions={ourWorksActions} states={ourWorksStates} />
 			</div>
-		</section>
+		</div>
 	);
 };
 

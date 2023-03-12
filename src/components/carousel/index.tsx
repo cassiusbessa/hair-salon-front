@@ -20,13 +20,13 @@ export type CarouselStates = {
 };
 
 export type ElementCarouselItems = {
-	addToRefs: (el: never) => void;
+	// addToRefs: (el: never) => void;
 	elementInfo: {content: string; alt?: string};
 	index: number;
 };
 
 type Props = {
-	Element: ({addToRefs, elementInfo, index}: ElementCarouselItems) => JSX.Element;
+	Element: ({elementInfo, index}: ElementCarouselItems) => JSX.Element;
 	states: CarouselStates;
 	actions: CarouselActions;
 	items: Array<{content: string; alt: string}>;

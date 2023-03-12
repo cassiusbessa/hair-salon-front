@@ -9,6 +9,6 @@ main {
 	@media (min-width: 950px) {
 		padding: 0 28px;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: min-content 50px repeat(4, min-content);
+		grid-template-rows: min-content 50px repeat(5, min-content);
 	}
 }

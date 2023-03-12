@@ -1,20 +1,20 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
-export type CarouselImagesState = {
+export type OurWorksState = {
 	currentItem: number;
 	maxItems: number;
 	isFrozen: boolean;
 };
 
-const initialState: CarouselImagesState = {
+const initialState: OurWorksState = {
 	currentItem: 0,
 	maxItems: 0,
 	isFrozen: false,
 };
 
-export const carouselImagesSlice = createSlice({
-	name: 'carouselImages',
+export const ourWorksSlice = createSlice({
+	name: 'ourWorks',
 	initialState,
 	reducers: {
 		incrementCurrentItems(state) {
@@ -46,6 +46,6 @@ export const carouselImagesSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} = carouselImagesSlice.actions;
+export const {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} = ourWorksSlice.actions;
 
-export default carouselImagesSlice.reducer;
+export default ourWorksSlice.reducer;
