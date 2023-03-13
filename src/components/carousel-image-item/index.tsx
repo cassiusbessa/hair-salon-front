@@ -3,13 +3,7 @@ import {type ElementCarouselItems} from '@components/carousel';
 
 const CarouselImageItem = ({elementInfo}: ElementCarouselItems) => {
 	return (
-		<img
-			className='carousel-image-item'
-			src={elementInfo.content}
-			alt={elementInfo.alt}
-			loading='lazy'
-			width='100%'
-		/>
+		<div className='carousel-image-item' style={{backgroundImage: `url(${elementInfo.content})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundOrigin: 'content-box', backgroundPosition: 'center center'}} />
 	);
 };
 
