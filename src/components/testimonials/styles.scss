@@ -1,7 +1,25 @@
-.testimonials {
+@import '../../styles/colors';
 
+.testimonials {
+	background-color: $--primary-light-green;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 400px;
+	
 	@media (min-width: 950px) {
 		grid-column: 1;
-		grid-row: 5 / 8;
+		grid-row: 5 / span 2;
+		height: 100%;
+	}
+
+	.testimonials-footer {
+		p {
+			height: 10%;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
 	}
 }

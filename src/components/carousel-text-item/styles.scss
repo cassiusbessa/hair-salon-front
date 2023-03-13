@@ -1,1 +1,13 @@
 @import '../../styles/colors';
+
+.carousel-text-item {
+	align-items: center;
+	display: flex;
+	width: 75%;
+
+	p {
+		text-align: left;
+		color: $--primary-light-text;
+		word-break: break-all;
+	}
+}

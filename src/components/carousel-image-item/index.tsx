@@ -1,7 +1,7 @@
 import './styles.scss';
 import {type ElementCarouselItems} from '@components/carousel';
 
-const CarouselImageItem = ({elementInfo, index}: ElementCarouselItems) => {
+const CarouselImageItem = ({elementInfo}: ElementCarouselItems) => {
 	return (
 		<img
 			className='carousel-image-item'

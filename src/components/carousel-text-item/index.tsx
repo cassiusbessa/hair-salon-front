@@ -1,14 +1,14 @@
 import {type ElementCarouselItems} from '@components/carousel';
 import './styles.scss';
 
-const CarouselTextItem = ({addToRefs, elementInfo, index}: ElementCarouselItems) => {
+const CarouselTextItem = ({elementInfo}: ElementCarouselItems) => {
 	return (
-		<div
-			key={elementInfo.content}
-			className={`carousel-item ${index === 0 ? 'carousel-current-item' : ''}`}
-			ref={addToRefs}
-		>
-			{elementInfo.content}
+		<div className='carousel-text-item'>
+			<p
+				key={elementInfo.content}
+			>
+				{elementInfo.content}
+			</p>
 		</div>
 	);
 };

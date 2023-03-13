@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react';
 import './styles.scss';
 import {type CarouselActions, type CarouselStates, type ElementCarouselItems} from '@components/carousel';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 
 type Props = {
 	Element: ({elementInfo, index}: ElementCarouselItems) => JSX.Element;
@@ -33,7 +33,6 @@ const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 	useEffect(() => {
 		const itemElement: HTMLDivElement = itemsRefs.current[states.currentItem];
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
-		// console.log(itemElement.offsetWidth);
 
 		wrapperElement.scrollLeft = ((itemElement.clientWidth || itemElement.offsetWidth) * states.currentItem);
 	}, [states.currentItem, states.maxItems]);

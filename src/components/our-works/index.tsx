@@ -31,6 +31,7 @@ const OurWorks = () => {
 				states={ourWorksStates}
 				actions={ourWorksActions}
 				items={items}
+				style={{height: '80%'}}
 			/>
 			<div className='carousel-images-footer'>
 				<p>Nossos trabalhos</p>

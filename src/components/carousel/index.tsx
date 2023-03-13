@@ -20,7 +20,6 @@ export type CarouselStates = {
 };
 
 export type ElementCarouselItems = {
-	// addToRefs: (el: never) => void;
 	elementInfo: {content: string; alt?: string};
 	index: number;
 };
@@ -30,9 +29,10 @@ type Props = {
 	states: CarouselStates;
 	actions: CarouselActions;
 	items: Array<{content: string; alt: string}>;
+	style?: React.CSSProperties | undefined;
 };
 
-const Carousel = ({Element, states, actions, items}: Props) => {
+const Carousel = ({Element, states, actions, items, style}: Props) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -58,6 +58,7 @@ const Carousel = ({Element, states, actions, items}: Props) => {
 			onMouseLeave={() => dispatch(actions.setIsFrozen(false))}
 			onTouchStart={() => dispatch(actions.setIsFrozen(true))}
 			onTouchEnd={() => dispatch(actions.setIsFrozen(false))}
+			style={style}
 		>
 			<button
 				className='carousel-arrow-left control'
