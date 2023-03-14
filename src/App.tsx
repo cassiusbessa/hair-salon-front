@@ -12,6 +12,7 @@ import {content, title} from '@assets/speciality/text';
 import ImgSpeciality from '@components/img-speciality';
 import OurWorks from '@components/our-works';
 import Testimonials from '@components/testimonials';
+import OurProducts from '@components/our-products';
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 				<ImgSpeciality />
 				<OurWorks />
 				<Testimonials />
+				<OurProducts />
 			</GridWrapper>
 			<DropdownService />
 			<Footer />

@@ -10,6 +10,6 @@ main {
     gap: 28px;
 		padding: 0 28px;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: min-content 50px 250px repeat(3, 200px);
+		grid-template-rows: min-content 50px 250px repeat(4, 200px);
 	}
 }

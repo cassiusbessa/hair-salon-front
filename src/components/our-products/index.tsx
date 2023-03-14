@@ -2,7 +2,7 @@ import Carousel from '@components/carousel';
 import './styles.scss';
 import CarouselImageItem from '@components/carousel-image-item';
 import {useSelector} from 'react-redux';
-import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} from '@states/our-works-reducer';
+import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} from '@states/our-products-reducer';
 import {type RootState} from '@store/redux-store';
 import CarouselDots from '@components/carousel-dots';
 
@@ -14,9 +14,9 @@ const items = [
 	{content: 'https://source.unsplash.com/random/250x250?street', alt: 'Street Image'},
 ];
 
-const OurWorks = () => {
-	const ourWorksStates = useSelector((state: RootState) => state.ourWorks);
-	const ourWorksActions = {
+const OurProducts = () => {
+	const ourProductsStates = useSelector((state: RootState) => state.ourProducts);
+	const ourProductsActions = {
 		incrementCurrentItems,
 		decrementCurrentItems,
 		setMaxItems,
@@ -25,20 +25,20 @@ const OurWorks = () => {
 	};
 
 	return (
-		<div className='our-works-carousel'>
+		<div className='our-products-carousel'>
 			<Carousel
 				Element={CarouselImageItem}
-				states={ourWorksStates}
-				actions={ourWorksActions}
+				states={ourProductsStates}
+				actions={ourProductsActions}
 				items={items}
 				style={{height: '80%'}}
 			/>
 			<div className='carousel-images-footer'>
-				<h2>Nossos trabalhos</h2>
-				<CarouselDots actions={ourWorksActions} states={ourWorksStates} />
+				<h2>Nossos produtos</h2>
+				<CarouselDots actions={ourProductsActions} states={ourProductsStates} />
 			</div>
 		</div>
 	);
 };
 
-export default OurWorks;
+export default OurProducts;
