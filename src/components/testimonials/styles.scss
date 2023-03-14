@@ -14,12 +14,24 @@
 		height: 100%;
 	}
 
+	.testimonials-header {
+		width: 100%;
+		padding: 28px;
+		border-bottom: 1px solid white;
+
+		h2 {
+			font-weight: 700;
+			font-size: 1.4rem;
+			color: $--primary-light-text;
+		}
+	}
+
 	.testimonials-footer {
-		p {
-			height: 10%;
-			width: 100%;
-			display: flex;
-			justify-content: center;
+		height: 10%;
+		width: 100%;
+
+		div {
+			margin: auto;
 		}
 	}
 }

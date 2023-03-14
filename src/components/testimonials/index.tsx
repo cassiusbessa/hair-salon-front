@@ -26,6 +26,9 @@ const Testimonials = () => {
 
 	return (
 		<section className='testimonials'>
+			<div className='testimonials-header'>
+				<h2>Depoimentos</h2>
+			</div>
 			<Carousel
 				Element={CarouselTextItem}
 				actions={testimonialsActions}
