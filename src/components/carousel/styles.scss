@@ -17,7 +17,7 @@
 		cursor: pointer;
 		border: none;
 		background-color: transparent;
-		background: linear-gradient(to left, transparent 0%, rgb(0, 0, 0) 200%);
+		background: linear-gradient(to left, transparent 0%, rgb(255, 255, 255) 200%);
 		opacity: 0.2;
 		transition: opacity 300ms ease-in-out;
 		z-index: 1;
@@ -28,7 +28,7 @@
 	}
 
 	.carousel-arrow-right {
-		background: linear-gradient(to right, transparent 0%, black 200%);
+		background: linear-gradient(to right, transparent 0%, rgb(255, 255, 255) 200%);
 		right: 0;
 		left: auto;
 	}
