@@ -16,12 +16,11 @@ const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 	const wrapperRef = useRef(null);
 	const itemsRefs = useRef([]);
 
-	const updateCurrentItem = () => {
+	const updateCurrentItem = (itemElement: HTMLDivElement) => {
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
-		const itemElement: HTMLImageElement = itemsRefs.current[states.currentItem];
-
-		const newCurrentItem = Math.round(wrapperElement.scrollLeft / itemElement.width);
+		const newCurrentItem = Math.round(wrapperElement.scrollLeft / itemElement.offsetWidth);
 		dispatch(actions.setCurrentItem(newCurrentItem));
+		wrapperElement.scrollLeft = ((itemElement.clientWidth || itemElement.offsetWidth) * newCurrentItem);
 	};
 
 	const addToRefs = (el: never) => {
@@ -33,18 +32,11 @@ const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 	useEffect(() => {
 		const itemElement: HTMLDivElement = itemsRefs.current[states.currentItem];
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
-
 		wrapperElement.scrollLeft = ((itemElement.clientWidth || itemElement.offsetWidth) * states.currentItem);
 	}, [states.currentItem, states.maxItems]);
 
-	const handlerOnTouchEnd = () => {
-		setTimeout(() => {
-			updateCurrentItem();
-		}, 1000);
-	};
-
 	return (
-		<div className='carousel-gallery-wrapper' ref={wrapperRef} onTouchEnd={handlerOnTouchEnd}>
+		<div className='carousel-gallery-wrapper' ref={wrapperRef}>
 			<div className='carousel-gallery'>
 				{
 					items.map((item, index) => (

@@ -1,10 +1,9 @@
 main {
-	max-width: 1400px;
+	max-width: 2400px;
 	margin-bottom: 28px;
   display: flex;
   flex-flow: column;
   gap: 28px;
-  border: 1px solid red;
 	
 	@media (min-width: 950px) {
     display: grid;
