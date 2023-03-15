@@ -2,7 +2,7 @@ import Carousel from '@components/carousel';
 import './styles.scss';
 import CarouselTextItem from '@components/carousel-text-item';
 import {useSelector} from 'react-redux';
-import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} from '@states/testimonials-reducer';
+import {incrementCurrentItem, decrementCurrentItem, setMaxItems, setIsFrozen, setCurrentItem} from '@states/testimonials-reducer';
 import {type RootState} from '@store/redux-store';
 import CarouselDots from '@components/carousel-dots';
 
@@ -17,8 +17,8 @@ const items = [
 const Testimonials = () => {
 	const testimonialsStates = useSelector((state: RootState) => state.testimonials);
 	const testimonialsActions = {
-		incrementCurrentItems,
-		decrementCurrentItems,
+		incrementCurrentItem,
+		decrementCurrentItem,
 		setMaxItems,
 		setIsFrozen,
 		setCurrentItem,

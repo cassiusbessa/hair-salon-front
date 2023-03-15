@@ -2,7 +2,7 @@ import Carousel from '@components/carousel';
 import './styles.scss';
 import CarouselImageItem from '@components/carousel-image-item';
 import {useSelector} from 'react-redux';
-import {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} from '@states/our-products-reducer';
+import {incrementCurrentItem, decrementCurrentItem, setMaxItems, setIsFrozen, setCurrentItem} from '@states/our-products-reducer';
 import {type RootState} from '@store/redux-store';
 import CarouselDots from '@components/carousel-dots';
 
@@ -17,8 +17,8 @@ const items = [
 const OurProducts = () => {
 	const ourProductsStates = useSelector((state: RootState) => state.ourProducts);
 	const ourProductsActions = {
-		incrementCurrentItems,
-		decrementCurrentItems,
+		incrementCurrentItem,
+		decrementCurrentItem,
 		setMaxItems,
 		setIsFrozen,
 		setCurrentItem,

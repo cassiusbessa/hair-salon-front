@@ -5,8 +5,8 @@ import {useDispatch} from 'react-redux';
 import {type ActionCreatorWithPayload, type ActionCreatorWithoutPayload} from '@reduxjs/toolkit';
 
 export type CarouselActions = {
-	incrementCurrentItems: ActionCreatorWithoutPayload;
-	decrementCurrentItems: ActionCreatorWithoutPayload;
+	incrementCurrentItem: ActionCreatorWithoutPayload;
+	decrementCurrentItem: ActionCreatorWithoutPayload;
 	setMaxItems: ActionCreatorWithPayload<number>;
 	setIsFrozen: ActionCreatorWithPayload<boolean>;
 	setCurrentItem: ActionCreatorWithPayload<number>;
@@ -38,17 +38,17 @@ const Carousel = ({Element, states, actions, items, style}: Props) => {
 		dispatch(actions.setMaxItems(items.length));
 	}, []);
 
-	// useEffect(() => {
-	// 	const interval = setInterval(() => {
-	// 		dispatch(actions.incrementCurrentItems());
-	// 	}, 3000);
+	useEffect(() => {
+		const interval = setInterval(() => {
+			dispatch(actions.incrementCurrentItem());
+		}, 3000);
 
-	// 	if (states.isFrozen) clearInterval(interval);
+		if (states.isFrozen) clearInterval(interval);
 
-	// 	return (() => {
-	// 		clearInterval(interval);
-	// 	});
-	// }, [states.isFrozen, states.maxItems]);
+		return (() => {
+			clearInterval(interval);
+		});
+	}, [states.isFrozen, states.maxItems]);
 
 	return (
 		<div
@@ -62,14 +62,14 @@ const Carousel = ({Element, states, actions, items, style}: Props) => {
 			<button
 				className='carousel-arrow-left control'
 				aria-label='Previous item'
-				onClick={() => dispatch(actions.decrementCurrentItems())}
+				onClick={() => dispatch(actions.decrementCurrentItem())}
 			>
 				{'<'}
 			</button>
 			<button
 				className='carousel-arrow-right control'
 				aria-label='Next item'
-				onClick={() => dispatch(actions.incrementCurrentItems())}
+				onClick={() => dispatch(actions.incrementCurrentItem())}
 			>
 				{'>'}
 			</button>
@@ -77,7 +77,6 @@ const Carousel = ({Element, states, actions, items, style}: Props) => {
 				Element={Element}
 				items={items}
 				states={states}
-				actions={actions}
 			/>
 		</div>
 	);
