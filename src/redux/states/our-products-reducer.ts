@@ -9,6 +9,6 @@ const initialState: CarouselState = {
 export const ourProductsSlice = carouselSliceFactory('ourProducts', initialState);
 
 // Action creators are generated for each case reducer function
-export const {incrementCurrentItems, decrementCurrentItems, setMaxItems, setIsFrozen, setCurrentItem} = ourProductsSlice.actions;
+export const {incrementCurrentItem, decrementCurrentItem, setMaxItems, setIsFrozen, setCurrentItem} = ourProductsSlice.actions;
 
 export default ourProductsSlice.reducer;

@@ -11,7 +11,7 @@ export const carouselSliceFactory = (name: string, initialState: CarouselState) 
 	name,
 	initialState,
 	reducers: {
-		incrementCurrentItems(state) {
+		incrementCurrentItem(state) {
 			if ((state.currentItem + 1) >= state.maxItems) {
 				state.currentItem = 0;
 				return;
@@ -19,7 +19,7 @@ export const carouselSliceFactory = (name: string, initialState: CarouselState) 
 
 			state.currentItem += 1;
 		},
-		decrementCurrentItems(state) {
+		decrementCurrentItem(state) {
 			if ((state.currentItem - 1) < 0) {
 				state.currentItem = state.maxItems - 1;
 				return;
