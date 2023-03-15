@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import {useEffect} from 'react';
 import GalleryWrapper from './components/gallery-wrapper/gallery-wrapper';
 import './styles.scss';

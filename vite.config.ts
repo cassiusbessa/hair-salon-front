@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    host: true
+  },
   resolve: {
     alias: {
       "@store": path.resolve(__dirname, './src/redux/store'),
