@@ -38,17 +38,17 @@ const Carousel = ({Element, states, actions, items, style}: Props) => {
 		dispatch(actions.setMaxItems(items.length));
 	}, []);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			dispatch(actions.incrementCurrentItems());
-		}, 3000);
+	// useEffect(() => {
+	// 	const interval = setInterval(() => {
+	// 		dispatch(actions.incrementCurrentItems());
+	// 	}, 3000);
 
-		if (states.isFrozen) clearInterval(interval);
+	// 	if (states.isFrozen) clearInterval(interval);
 
-		return (() => {
-			clearInterval(interval);
-		});
-	}, [states.isFrozen, states.maxItems]);
+	// 	return (() => {
+	// 		clearInterval(interval);
+	// 	});
+	// }, [states.isFrozen, states.maxItems]);
 
 	return (
 		<div

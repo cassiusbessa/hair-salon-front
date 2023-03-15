@@ -31,17 +31,18 @@ const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 	const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
 		const start = e.currentTarget.scrollLeft;
 		setScrollGallery((prevState: {start: number; end: number}) => ({...prevState, start}));
-		console.log('start', scrollGallery.start);
 	};
 
 	const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
 		const end = e.currentTarget.scrollLeft;
-		setScrollGallery((prevState: {start: number; end: number}) => ({...prevState, end}));
-		console.log('start', scrollGallery.start);
-		console.log('end', scrollGallery.end);
-		if (scrollGallery.end === scrollGallery.start) return null;
-		if (scrollGallery.end > scrollGallery.start) dispatch(actions.incrementCurrentItems());
-		if (scrollGallery.end < scrollGallery.start) dispatch(actions.decrementCurrentItems());
+		setScrollGallery(prevState => {
+			console.log('start', prevState.start);
+			console.log('end', end);
+			if (end === prevState.start) return prevState;
+			if (end > prevState.start) dispatch(actions.incrementCurrentItems());
+			if (end < prevState.start) dispatch(actions.decrementCurrentItems());
+			return {...prevState, end};
+		});
 	};
 
 	const addToRefs = (el: never) => {
@@ -54,7 +55,8 @@ const GalleryWrapper = ({Element, items, states, actions}: Props) => {
 		const wrapperElement = wrapperRef.current as unknown as HTMLDivElement;
 		const itemElement: HTMLDivElement = itemsRefs.current[states.currentItem];
 		wrapperElement.scrollLeft = (itemElement.clientWidth * states.currentItem);
-	}, [states.currentItem, states.maxItems]);
+		console.log('scroll', wrapperElement.scrollLeft);
+	}, [states.currentItem, states.maxItems, scrollGallery]);
 
 	return (
 		<div className='carousel-gallery-wrapper' ref={wrapperRef} onTouchStartCapture={handleTouchStart} onTouchEnd={handleTouchEnd}>
