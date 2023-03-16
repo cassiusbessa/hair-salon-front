@@ -2,6 +2,7 @@ import logo from '@assets/intro/logo.svg';
 import './styles.scss';
 
 import SocialMediaIcons from '@components/social-media-icons';
+import {links} from '@assets/links';
 
 type Props = {
 	style: React.CSSProperties | undefined;
@@ -14,12 +15,10 @@ const HeaderDesktop = ({style}: Props) => {
 				<img src={logo} alt='Logo Icon' height='100%' />
 				<nav>
 					<ul>
-						<li><a href='#'>Conheça-me</a></li>
-						<li><a href='#'>Trabalhos</a></li>
-						<li><a href='#'>Serviços</a></li>
-						<li><a href='#'>Endereços</a></li>
-						<li><a href='#'>Contatos</a></li>
-						<li><a href='#'>Agende</a></li>
+						{links.map(link => (
+							<li key={`${link.tag}-desktop-header`}> <a href={link.href}>{link.tag}</a> </li>
+						))}
+						<li><a href='https://contate.me/sula-top' target='_blank' rel='noopener noreferrer'>Agende</a></li>
 					</ul>
 					<SocialMediaIcons />
 				</nav>

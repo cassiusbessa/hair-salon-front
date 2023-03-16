@@ -1,16 +1,18 @@
 import './styles.scss';
+import {links} from '@assets/links';
 
 const IntroNavBar = () => (
 	<div className='nav-bar-container'>
 		<ul>
-			<li><a href='#know-me'>Conheça-me</a></li>
-			<li><a href='#specialty'>Especialidade</a></li>
-			<li><a href='#our-works'>Trabalhos</a></li>
+			{links.slice(0, (links.length / 2) + 1).map(link => (
+				<li key={`${link.tag}-intro-nav-bar`}> <a href={link.href}>{link.tag}</a></li>
+			))}
 		</ul>
 		<ul>
-			<li><a href='#footer'>Contatos</a></li>
-			<li><a href='#footer'>Endereço</a></li>
-			<li className='booking'>AGENDE AGORA</li>
+			{links.slice((links.length / 2) + 1).map(link => (
+				<li key={`${link.tag}-intro-nav-bar`}> <a href={link.href}>{link.tag}</a></li>
+			))}
+			<li className='booking'><a href='https://contate.me/sula-top' target='_blank' rel='noopener noreferrer'>Agende Agora</a> </li>
 		</ul>
 	</div>
 );

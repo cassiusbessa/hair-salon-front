@@ -9,7 +9,7 @@
   right: 0;
   margin: 1rem;
   z-index: 3;
-  button {
+  a, button {
     @include size(100%, 100%);
     @include flexAlignment(column, center, center);
     gap: 0.1rem;
@@ -19,6 +19,9 @@
     color: $--primary-light-text;
     border: 1px solid $--primary-light-text;
     font-size: 0.5rem;
+    &:hover {
+      cursor: pointer;
+    }
     img {
       @include size(26px,26px);
       filter: brightness(0) invert(1);

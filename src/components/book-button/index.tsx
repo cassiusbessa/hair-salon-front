@@ -3,10 +3,12 @@ import './styles.scss';
 
 const BookButton = () => (
 	<div className='book-button-container' >
-		<button type='button'>
-			<img src={calendarIcon} alt='calendar' />
-      Agende
-		</button>
+		<a href='https://contate.me/sula-top' target='_blank' rel='noopener noreferrer'>
+			<button type='button'>
+				<img src={calendarIcon} alt='calendar' />
+        Agende
+			</button>
+		</a>
 	</div>
 );
 
