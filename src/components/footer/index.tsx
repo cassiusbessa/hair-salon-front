@@ -6,7 +6,7 @@ import './styles.scss';
 
 const Footer = () => {
 	return (
-		<footer className='footer'>
+		<footer className='footer' id='footer'>
 			<Adress />
 			<Contacts />
 			<GoogleMaps />

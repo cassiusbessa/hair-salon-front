@@ -3,13 +3,13 @@ import './styles.scss';
 const IntroNavBar = () => (
 	<div className='nav-bar-container'>
 		<ul>
-			<li>Conheça-me</li>
-			<li>Especialidade</li>
-			<li>Contatos</li>
+			<li><a href='#know-me'>Conheça-me</a></li>
+			<li><a href='#specialty'>Especialidade</a></li>
+			<li><a href='#our-works'>Trabalhos</a></li>
 		</ul>
 		<ul>
-			<li>Trabalhos</li>
-			<li>Endereço</li>
+			<li><a href='#footer'>Contatos</a></li>
+			<li><a href='#footer'>Endereço</a></li>
 			<li className='booking'>AGENDE AGORA</li>
 		</ul>
 	</div>

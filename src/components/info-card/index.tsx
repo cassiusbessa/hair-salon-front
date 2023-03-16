@@ -3,11 +3,12 @@ import './styles.scss';
 type Props = {
 	title: string;
 	content: string[];
+	id: string;
 };
 
-const InfoCard = ({title, content}: Props) => {
+const InfoCard = ({title, content, id}: Props) => {
 	return (
-		<section className='info-card-container'>
+		<section className='info-card-container' id={id}>
 			<div className='info-card-title' >
 				<h2>{title}</h2>
 			</div>

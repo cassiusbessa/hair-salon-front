@@ -2,12 +2,12 @@ import sulaPhoto from '@assets/know-me/sula-photo.png';
 import './styles.scss';
 
 const KnowMe = () => (
-	<section className='know-me-container'>
+	<section className='know-me-container scroll' id='know-me'>
 		<h2>Conheça-me</h2>
 
 		<div className='know-me-content'>
 
-			<div className='knowme-img-wraper'>
+			<div className='know-me-img-wraper'>
 				<img src={sulaPhoto} alt='Sula' />
 			</div>
 

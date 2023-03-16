@@ -25,7 +25,7 @@ const OurWorks = () => {
 	};
 
 	return (
-		<div className='our-works-carousel'>
+		<div className='our-works-carousel' id='our-works'>
 			<Carousel
 				Element={CarouselImageItem}
 				states={ourWorksStates}

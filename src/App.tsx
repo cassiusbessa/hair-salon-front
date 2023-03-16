@@ -22,7 +22,7 @@ function App() {
 			<Intro />
 			<GridWrapper>
 				<KnowMe />
-				<InfoCard title={title} content={content}/>
+				<InfoCard title={title} content={content} id='specialty'/>
 				<ImgSpeciality />
 				<OurWorks />
 				<Testimonials />
