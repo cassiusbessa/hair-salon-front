@@ -5,7 +5,6 @@ import './styles.scss';
 import DropdownHeaderMobile from './components/dropdown-header-mobile';
 import HeaderMobile from './components/header-mobile';
 import HeaderDesktop from './components/header-desktop/header-desktop';
-import {links} from '@assets/links';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +41,7 @@ const Header = () => {
 	return (
 		<div className='header-dropdown-container' style={{display}} ref={domNode}>
 			<HeaderMobile onClickHamburguer={handlerClickHamburguer} style={{opacity}} />
-			<DropdownHeaderMobile isOpen={isOpen}/>
+			<DropdownHeaderMobile isOpen={isOpen} handleOpen={handlerClickHamburguer}/>
 			<HeaderDesktop style={{opacity}}/>
 		</div>
 	);

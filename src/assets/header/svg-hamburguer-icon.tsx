@@ -40,8 +40,8 @@ const SvgHamburguerIcon = (props: ISvgIcon) => {
 		onMouseDown={props.onClickColor ? () => setIsActive(true) : undefined}
 		onMouseUp={props.onClickColor ? handlerMouseUp : undefined}
 			className={props.className ?? 'svg-hamburguer-icon'}
-			width={props.width ?? '70'}
-			height={props.width ?? '61'}
+			width={props.width ?? '56'}
+			height={props.width ?? '48'}
 			viewBox="0 0 70 61"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"

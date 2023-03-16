@@ -4,12 +4,13 @@ import './styles.scss';
 
 type Props = {
 	isOpen: boolean;
+	handleOpen: () => void;
 };
 
-const DropdownHeaderMobile = ({isOpen}: Props) => (
+const DropdownHeaderMobile = ({isOpen, handleOpen}: Props) => (
 	<div className={`dropdown ${isOpen ? 'open' : ''}`}>
 		<nav>
-			<ul>
+			<ul onClick={handleOpen}>
 				{links.map(link => (
 					<li key={`${link.tag}-dropdown-header`}> <a href={link.href}>{link.tag}</a> </li>
 				))}
