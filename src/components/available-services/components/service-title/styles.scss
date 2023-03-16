@@ -3,6 +3,7 @@
 .title-services {
 	align-items: center;
 	background-color: $--primary-light-green;
+	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
 	padding: 28px;
@@ -17,6 +18,10 @@
 		border: none;
 		visibility: hidden;
 		transition: transform .5s ease-in-out;
+
+		@media (min-width: 950px) {
+			display: none;
+		}
 
 		svg {
 			cursor: pointer;

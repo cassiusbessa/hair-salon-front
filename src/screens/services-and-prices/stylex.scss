@@ -1,0 +1,9 @@
+@import '../../styles/colors';
+
+.services-and-prices {
+	@media (min-width: 950px) {
+		padding: 50px 0;
+		background-color: $--secondary-bg-gray;
+		margin: 0 28px 28px 28px;
+	}
+}

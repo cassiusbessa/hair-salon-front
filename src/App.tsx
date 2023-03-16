@@ -13,6 +13,7 @@ import ImgSpeciality from '@components/img-speciality';
 import OurWorks from '@components/our-works';
 import Testimonials from '@components/testimonials';
 import OurProducts from '@components/our-products';
+import ServicesAndPrices from '@screens/services-and-prices';
 
 function App() {
 	return (
@@ -28,7 +29,7 @@ function App() {
 				<Testimonials />
 				<OurProducts />
 			</GridWrapper>
-			<DropdownService />
+			<ServicesAndPrices />
 			<Footer />
 		</Provider>
 	);
