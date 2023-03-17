@@ -8,7 +8,12 @@
 	flex-direction: column;
 	gap: 12px;
 	padding: 28px;
-
+  gap: 1rem;
+  @media (min-width: 950px) {
+    text-align: left;
+    align-items: start;  
+    gap: 1.5rem;
+  }
 	p:nth-child(1) {
 		font-size: 1rem;
 		font-weight: 700;
@@ -27,6 +32,10 @@
       cursor: pointer;
       animation: scaler 0.3s ease-in-out; 
     }     
+  }
+
+  .social-media-icons-container {
+    align-self: space-evenly;
   }
 }
 

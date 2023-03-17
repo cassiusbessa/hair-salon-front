@@ -1,4 +1,23 @@
-.footer {
-	display: grid;
-	gap: 3px;
+@import '../../styles/colors';
+
+.footer-container {
+  width: 100%;
+  border: 1px dotted royalblue;
+  @media (min-width: 950px) {
+    background-color: $--primary-light-green;
+  }
+  .footer-content {
+    display: grid;
+    gap: 3px;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;  
+    @media (min-width: 950px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    div {
+      background-color: $--primary-light-green;
+    }
+  }    
 }

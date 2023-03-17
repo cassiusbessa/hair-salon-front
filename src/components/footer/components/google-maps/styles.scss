@@ -6,4 +6,8 @@
 	display: flex;
 	justify-content: center;
 	padding: 28px 5%;
+  @media (min-width: 950px) {
+    height: fit-content;
+  }
+    
 }

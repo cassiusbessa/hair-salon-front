@@ -4,6 +4,11 @@
 	background-color: $--primary-light-green;
 	color: $--primary-light-text;
 	padding: 28px;
+  width: 100%;
+  @media (min-width: 950px) {
+    grid-column: 1/4;
+    grid-row: 2;
+  }
 
 	h3 {
 		font-size: 1rem;
@@ -17,5 +22,11 @@
 		gap: 22px 0;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(4, 1fr);
+
+    @media (min-width: 950px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      width: 100%;
+    }  
 	}
 }
