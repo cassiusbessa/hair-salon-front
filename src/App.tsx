@@ -4,7 +4,6 @@ import Intro from '@screens/intro';
 import BookButton from '@components/book-button';
 import KnowMe from '@screens/know-me';
 import Header from '@components/header';
-import DropdownService from '@components/dropdown-service';
 import Footer from '@components/footer';
 import GridWrapper from '@components/grid-wrapper';
 import InfoCard from '@components/info-card';
