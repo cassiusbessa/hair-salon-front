@@ -4,8 +4,24 @@
 .social-media-icons-container {
   @include flexAlignment(row, flex-start, flex-start);
   gap: 1rem;
-  img {
-    width: 30px;
-    height: 30px;
+    img {
+      width: 30px;
+      height: 30px;
+      &:hover {
+        cursor: pointer;
+        animation: scaler 0.3s ease-in-out; 
+      }
+    }      
+}
+
+@keyframes scaler {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  85% {
+    transform: scale3d(1, 1, 1);
   }
 }

@@ -1,4 +1,4 @@
-import logo from '@assets/intro/logo.svg';
+import logo from '@assets/intro/logo.png';
 import './styles.scss';
 
 import SocialMediaIcons from '@components/social-media-icons';

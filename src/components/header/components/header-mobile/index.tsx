@@ -1,4 +1,4 @@
-import logo from '@assets/intro/logo.svg';
+import logo from '@assets/intro/logo.png';
 import {primaryDarkGreen} from '@styles/inline-colors';
 import SvgHamburguerIcon from '@assets/header/svg-hamburguer-icon';
 import './style.scss';

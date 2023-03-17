@@ -1,5 +1,10 @@
 .logo-container {
   animation: fadeInText 9s ease-in-out;
+  img {  
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
 };
 
 @keyframes fadeInText {

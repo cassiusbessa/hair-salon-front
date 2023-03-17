@@ -21,4 +21,23 @@
 		font-size: .875rem;
 		font-weight: 700;
 	}
+
+  .svg-arrow-dropdown-icon {
+    &:hover {
+      cursor: pointer;
+      animation: scaler 0.3s ease-in-out; 
+    }     
+  }
+}
+
+@keyframes scaler {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  85% {
+    transform: scale3d(1, 1, 1);
+  }
 }

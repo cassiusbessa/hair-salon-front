@@ -1,5 +1,5 @@
 import './styles.scss';
-import logo from '@assets/intro/logo.svg';
+import logo from '@assets/intro/logo.png';
 
 const Logo = () => (
 	<div className='logo-container'>

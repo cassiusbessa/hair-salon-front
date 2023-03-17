@@ -6,7 +6,7 @@ const Contacts = () => {
 	return (
 		<div className='footer-contacts'>
 			<p>Contatos:</p>
-			<div><SvgWhatsAppIcon /><span>(21)9999-999</span></div>
+			<div><SvgWhatsAppIcon /><span>(21)99385-8905</span></div>
 			<SocialMediaIcons />
 		</div>
 	);
