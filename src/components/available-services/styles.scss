@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+
+.services-desktop {
+	display: flex;
+
+	.services-desktop-left {
+		width: 50%;
+
+		div {
+			margin-bottom: 1px;
+		}
+
+		.service-selected {
+			background-color: $--primary-dark-green;
+		}
+	}
+
+	.services-desktop-right {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		width: 50%;
+
+		p {
+			text-align: center;
+			
+			span {
+				font-size: 2rem;
+				color: $--primary-light-green;
+				font-weight: 700;
+			}
+		}
+	}
+}
