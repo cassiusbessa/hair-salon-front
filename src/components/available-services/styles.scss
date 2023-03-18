@@ -1,5 +1,12 @@
 @import '../../styles/colors';
 
+.container-service-mobile {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin-bottom: 28px;
+}
+
 .services-desktop {
 	display: flex;
 

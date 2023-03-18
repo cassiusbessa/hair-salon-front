@@ -11,7 +11,7 @@ type Props = {
 
 const ServiceTitle = ({onClick, isOpen, requirements, className}: Props) => {
 	return (
-		<div className={`title-services ${className ?? ''}`} onClick={onClick}>
+		<div className={`title-services box-shadow ${className ?? ''}`} onClick={onClick}>
 			<div>{requirements.title}</div>
 			<button className={isOpen ? 'rotate-180' : ''}>
 				<SvgArrowDropdownIcon />

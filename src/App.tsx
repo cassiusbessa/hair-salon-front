@@ -16,7 +16,7 @@ import ServicesAndPrices from '@screens/services-and-prices';
 
 function App() {
 	return (
-		<Provider store={store} >
+		<Provider store={store}>
 			<Header />
 			<BookButton />
 			<Intro />

@@ -16,7 +16,7 @@
   h2 {
     align-self: flex-start;
     color: $--primary-light-green;
-    font-size: 2rem;
+    font-size: 1.6rem;
 
     @media (min-width: 950px) {
       font-size: 2.5rem;
@@ -37,8 +37,9 @@
     .know-me-img-wraper {
       max-width: 470px;
       margin: auto;
-
+      
       img {
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
         height: 100%;
         object-fit: cover;
         width: 100%;
@@ -52,7 +53,7 @@
 
     p {
       color: $--primary-dark-text;
-      font-size: 1.375rem;
+      font-size: 1rem;
       
       @media (min-width: 950px) {
         width: 60%;

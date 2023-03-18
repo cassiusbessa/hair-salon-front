@@ -55,7 +55,7 @@ const AvaliableServices = ({requirements}: Props) => {
 			{
 				windowWidth <= 950
 					? (
-						<div>
+						<div className='container-service-mobile'>
 							{requirements.map((ele: DropdownServiceRequirements) => (
 								<DropdownService key={ele.id} requirements={ele} />
 							))}

@@ -1,9 +1,9 @@
 .dropdown-service {
 	max-height: 0;
-	transition: transform .5s linear, max-height .5s linear;
+	transition: max-height .5s linear;
 	transform-origin: top center;
+	overflow: hidden;
 	width: 100%;
-	transform: rotateX(90deg);
 
 	p {
 		padding: 28px 28px 0;
@@ -13,5 +13,4 @@
 
 .open-dropdown-service {
 	max-height: 410px;
-	transform: rotateX(0);
 }
