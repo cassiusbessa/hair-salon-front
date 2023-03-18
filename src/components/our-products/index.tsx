@@ -28,7 +28,7 @@ const OurProducts = () => {
 	};
 
 	return (
-		<div className='our-products-carousel'>
+		<div className='our-products-carousel box-shadow'>
 			<Carousel
 				Element={CarouselImageItem}
 				states={ourProductsStates}

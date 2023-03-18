@@ -34,7 +34,7 @@ const serviceInfo: DropdownServiceRequirements[] = [
 
 const ServicesAndPrices = () => {
 	return (
-		<section className='services-and-prices'>
+		<section className='services-and-prices box-shadow'>
 			<AvaliableServices requirements={serviceInfo} />
 		</section>
 	);

@@ -8,7 +8,7 @@ type Props = {
 
 const InfoCard = ({title, text, id}: Props) => {
 	return (
-		<section className='info-card-container' id={id}>
+		<section className='info-card-container box-shadow' id={id}>
 			<div className='info-card-title' >
 				<h2>{title}</h2>
 			</div>
