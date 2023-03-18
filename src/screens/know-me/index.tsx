@@ -11,7 +11,7 @@ const KnowMe = () => (
 				<img src={sulaPhoto} alt='Sula' />
 			</div>
 
-			<p> Aqui nós iremos escrever dois parágrafos sobre a dona do salão. Contar sobre qualidades, cursos, experiencias e etc </p>
+			<p> Sula é altamente qualificada e experiente na indústria de beleza, tendo investido em muitos cursos e treinamentos para manter suas habilidades afiadas. Ela é atenciosa e dedicada a garantir que todos os clientes recebam um serviço de alta qualidade e personalizado. Sua vasta experiência inclui trabalhar com todos os tipos de cabelo e pele, tornando-a capaz de lidar com qualquer desafio. Sua paixão pelo que faz é refletida em seu trabalho excepcional, o que a torna uma referência em nossa comunidade de beleza </p>
 
 		</div>
 	</section>

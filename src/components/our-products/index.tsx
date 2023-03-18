@@ -5,13 +5,16 @@ import {useSelector} from 'react-redux';
 import {incrementCurrentItem, decrementCurrentItem, setMaxItems, setIsFrozen, setCurrentItem} from '@states/our-products-reducer';
 import {type RootState} from '@store/redux-store';
 import CarouselDots from '@components/carousel-dots';
+import product1 from '@assets/our-products/product1.webp';
+import product2 from '@assets/our-products/product2.webp';
+import product3 from '@assets/our-products/product3.png';
+import product4 from '@assets/our-products/product4.webp';
 
 const items = [
-	{content: 'https://source.unsplash.com/random/250x250?animal', alt: 'Animal Image'},
-	{content: 'https://source.unsplash.com/random/250x250?nature', alt: 'Nature Image'},
-	{content: 'https://source.unsplash.com/random/250x250?beach', alt: 'Beach Image'},
-	{content: 'https://source.unsplash.com/random/250x250?night', alt: 'Night Image'},
-	{content: 'https://source.unsplash.com/random/250x250?street', alt: 'Street Image'},
+	{content: product1, alt: 'Product 1'},
+	{content: product2, alt: 'Product 2'},
+	{content: product3, alt: 'Product 3'},
+	{content: product4, alt: 'Product 4'},
 ];
 
 const OurProducts = () => {

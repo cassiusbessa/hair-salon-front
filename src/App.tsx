@@ -7,8 +7,8 @@ import Header from '@components/header';
 import Footer from '@components/footer';
 import GridWrapper from '@components/grid-wrapper';
 import InfoCard from '@components/info-card';
-import {content, title} from '@assets/speciality/text';
-import ImgSpeciality from '@components/img-speciality';
+import {text, title} from '@assets/speciality/text';
+import VideoSpeciality from '@components/video-speciality';
 import OurWorks from '@components/our-works';
 import Testimonials from '@components/testimonials';
 import OurProducts from '@components/our-products';
@@ -22,8 +22,8 @@ function App() {
 			<Intro />
 			<GridWrapper>
 				<KnowMe />
-				<InfoCard title={title} content={content} id='specialty'/>
-				<ImgSpeciality />
+				<InfoCard title={title} text={text} id='specialty'/>
+				<VideoSpeciality />
 				<OurWorks />
 				<Testimonials />
 				<OurProducts />

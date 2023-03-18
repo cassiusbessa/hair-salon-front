@@ -2,7 +2,7 @@ import './styles.scss';
 
 const CatchPhrase = () => (
 	<div className='catch-phrase-container'>
-		<p>FRASE DE EFEITO MUITO <span className='highlighted-word'>BRABA</span> DE ATÉ 3 LINHAS SOBRE O SALÃO</p>
+		<p>Transformamos cabelos em <span className='highlighted-word'>obras de arte</span> para que você se sinta linda em cada olhar</p>
 	</div>
 );
 

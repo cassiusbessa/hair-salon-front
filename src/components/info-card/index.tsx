@@ -2,17 +2,17 @@ import './styles.scss';
 
 type Props = {
 	title: string;
-	content: string[];
+	text: string;
 	id: string;
 };
 
-const InfoCard = ({title, content, id}: Props) => {
+const InfoCard = ({title, text, id}: Props) => {
 	return (
 		<section className='info-card-container' id={id}>
 			<div className='info-card-title' >
 				<h2>{title}</h2>
 			</div>
-			<p>{content[0]}</p>
+			<p>{text}</p>
 		</section>
 	);
 };

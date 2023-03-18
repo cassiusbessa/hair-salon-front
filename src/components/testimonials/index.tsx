@@ -7,11 +7,11 @@ import {type RootState} from '@store/redux-store';
 import CarouselDots from '@components/carousel-dots';
 
 const items = [
-	{content: 'Some testimonial to give an example 1 Some testimonial to give an example 1 Some testimonial to give an example 1 Some testimonial to give an example 1 Some testimonial to give an example 1 Some testimonial to give an example 1', alt: ''},
-	{content: 'Some testimonial to give an example 2 Some testimonial to give an example 2 Some testimonial to give an example 2 Some testimonial to give an example 2 Some testimonial to give an example 2 Some testimonial to give an example 2', alt: ''},
-	{content: 'Some testimonial to give an example 3 Some testimonial to give an example 3 Some testimonial to give an example 3 Some testimonial to give an example 3 Some testimonial to give an example 3 Some testimonial to give an example 3', alt: ''},
-	{content: 'Some testimonial to give an example 4 Some testimonial to give an example 4 Some testimonial to give an example 4', alt: ''},
-	{content: 'Some testimonial to give an example 5 Some testimonial to give an example 5 Some testimonial to give an example 5', alt: ''},
+	{content: '"Eu amo vir a este salão! O atendimento é excelente e sempre saio com um corte de cabelo perfeito. Recomendo a todos!" - Ana Cristóvão', alt: ''},
+	{content: 'Eu não confio meu cabelo em nenhum outro lugar além deste salão. Eles sempre fazem um trabalho excepcional e me sinto maravilhosa toda vez que saio daqui." - Maria Cruz da Silva', alt: ''},
+	{content: '"Eu vim para este salão para uma mudança completa de visual e eles superaram todas as minhas expectativas. A equipe é incrível e me deixou tão confortável durante todo o processo. Obrigada por me deixar mais confiante!" - Juliana Bessa', alt: ''},
+	{content: '"Eu estava procurando por um lugar onde pudesse tratar bem do meu cabelo e encontrei neste salão. A hidratação que fizeram em meu cabelo deixou-o super saudável e brilhante. Recomendo!" - Carla Rodrigues', alt: ''},
+	{content: '"Meu cabelo é complicado e eu tinha dificuldade em encontrar alguém que pudesse lidar com ele até que eu encontrei este salão. Eles sabem exatamente o que fazer e sempre me surpreendem com o resultado final." - Bruna Ferreira Souza', alt: ''},
 ];
 
 const Testimonials = () => {

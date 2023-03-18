@@ -5,13 +5,16 @@ import {useSelector} from 'react-redux';
 import {incrementCurrentItem, decrementCurrentItem, setMaxItems, setIsFrozen, setCurrentItem} from '@states/our-works-reducer';
 import {type RootState} from '@store/redux-store';
 import CarouselDots from '@components/carousel-dots';
+import carousel1 from '@assets/our-works/carousel1.jpg';
+import carousel2 from '@assets/our-works/carousel2.jpg';
+import carousel3 from '@assets/our-works/carousel3.jpg';
+import carousel4 from '@assets/our-works/carousel4.jpg';
 
 const items = [
-	{content: 'https://source.unsplash.com/random/250x250?animal', alt: 'Animal Image'},
-	{content: 'https://source.unsplash.com/random/250x250?nature', alt: 'Nature Image'},
-	{content: 'https://source.unsplash.com/random/250x250?beach', alt: 'Beach Image'},
-	{content: 'https://source.unsplash.com/random/250x250?night', alt: 'Night Image'},
-	{content: 'https://source.unsplash.com/random/250x250?street', alt: 'Street Image'},
+	{content: carousel1, alt: 'Haircut Image'},
+	{content: carousel2, alt: 'Haircut Image'},
+	{content: carousel3, alt: 'Haircut Image'},
+	{content: carousel4, alt: 'Haircut Image'},
 ];
 
 const OurWorks = () => {
