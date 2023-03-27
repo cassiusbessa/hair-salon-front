@@ -1,5 +1,6 @@
 import AvaliableServices, {type DropdownServiceRequirements} from '@components/available-services';
 import './stylex.scss';
+import {useWindowWidthResize} from '@custom-hooks/use-window-width';
 
 const serviceInfo: DropdownServiceRequirements[] = [
 	{
@@ -33,8 +34,10 @@ const serviceInfo: DropdownServiceRequirements[] = [
 ];
 
 const ServicesAndPrices = () => {
+	const currentWindowWidth = useWindowWidthResize();
+
 	return (
-		<section className='services-and-prices box-shadow'>
+		<section className={`services-and-prices ${currentWindowWidth <= 950 ? '' : 'box-shadow'}`}>
 			<AvaliableServices requirements={serviceInfo} />
 		</section>
 	);

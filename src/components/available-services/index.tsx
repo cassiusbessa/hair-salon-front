@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import './styles.scss';
 import DropdownService from './components/dropdown-services/dropdown-services';
 import ServiceTitle from './components/service-title/service-title';
+import {useWindowWidthResize} from '@custom-hooks/use-window-width';
 
 export type DropdownServiceRequirements = {
 	id: string;
@@ -17,16 +18,8 @@ type Props = {
 };
 
 const AvaliableServices = ({requirements}: Props) => {
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [currentService, setCurrentService] = useState(0);
-
-	useEffect(() => {
-		const handlerResize = () => setWindowWidth(window.innerWidth);
-
-		window.addEventListener('resize', handlerResize);
-
-		return (() => window.removeEventListener('resize', handlerResize));
-	}, []);
+	const currentWindowWidth = useWindowWidthResize();
 
 	const generateDesktopServicesComponent = () => (
 		<div className='services-desktop'>
@@ -53,7 +46,7 @@ const AvaliableServices = ({requirements}: Props) => {
 	return (
 		<>
 			{
-				windowWidth <= 950
+				currentWindowWidth <= 950
 					? (
 						<div className='container-service-mobile'>
 							{requirements.map((ele: DropdownServiceRequirements) => (
