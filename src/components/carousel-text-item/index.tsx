@@ -6,6 +6,7 @@ const CarouselTextItem = ({elementInfo}: ElementCarouselItems) => {
 		<div className='carousel-text-item'>
 			<p
 				key={elementInfo.content}
+				className='g-txt-just-inter-word'
 			>
 				{elementInfo.content}
 			</p>

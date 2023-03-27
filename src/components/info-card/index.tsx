@@ -12,7 +12,7 @@ const InfoCard = ({title, text, id}: Props) => {
 			<div className='info-card-title' >
 				<h2>{title}</h2>
 			</div>
-			<p>{text}</p>
+			<p className='g-txt-just-inter-word'>{text}</p>
 		</section>
 	);
 };
