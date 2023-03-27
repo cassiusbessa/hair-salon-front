@@ -6,7 +6,6 @@ export const useWindowWidthResize = () => {
 
 	useEffect(() => {
 		const handlerResize = () => {
-			console.log('Resise');
 			setWindowWidth(window.innerWidth);
 		};
 
