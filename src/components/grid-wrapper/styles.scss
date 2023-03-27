@@ -2,14 +2,14 @@ main {
 	max-width: 2400px;
 	margin-bottom: 28px;
   display: flex;
+	justify-content: center;
   flex-flow: column;
   gap: 28px;
 	
 	@media (min-width: 950px) {
     display: grid;
-    gap: 28px;
 		padding: 0 28px;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 48% 48%;
 		grid-template-rows: min-content 50px 360px repeat(4, 200px);
 	}
 }
