@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import {useEffect, useRef} from 'react';
 import './styles.scss';
-import {type CarouselActions, type CarouselStates, type ElementCarouselItems} from '@components/carousel';
+import {type CarouselStates, type ElementCarouselItems} from '@components/carousel';
 
 type Props = {
 	Element: ({elementInfo, index}: ElementCarouselItems) => JSX.Element;
