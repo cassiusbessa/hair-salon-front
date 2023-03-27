@@ -48,8 +48,8 @@ const SvgWhatsAppIcon = ({
         onMouseDown={onClickColor ? () => setIsActive(true) : undefined}
         onMouseUp={onClickColor ? handlerMouseUp : undefined}
         className={className ?? 'svg-arrow-dropdown-icon'}
-        width={width ?? 26}
-        height={height ?? 28}
+        width={width ?? 30}
+        height={height ?? 30}
         fill={colorItem}
         viewBox='0 0 26 28'
         xmlns='http://www.w3.org/2000/svg'

@@ -7,7 +7,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	
+
 	.header-container {
 		display: flex;
 		height: 100%;
@@ -16,10 +16,10 @@
 		padding: 0 28px;
 		width: 100%;
 
-    img {
-      margin-top: 0.3rem;
-    }
-	
+		& > img:nth-child(1) {
+			margin-top: 4px;
+		}
+
 		nav {
 			align-items: center;
 			display: flex;
