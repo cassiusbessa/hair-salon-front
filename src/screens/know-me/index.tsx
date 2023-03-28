@@ -8,7 +8,7 @@ const KnowMe = () => (
 			<div className='know-me-img-wraper'>
 				<img src={sulaPhoto} alt='Sula' />
 			</div>
-			<p className='g-txt-just-inter-word'> Sula é altamente qualificada e experiente na indústria de beleza, tendo investido em muitos cursos e treinamentos para manter suas habilidades afiadas. Ela é atenciosa e dedicada a garantir que todos os clientes recebam um serviço de alta qualidade e personalizado. Sua vasta experiência inclui trabalhar com todos os tipos de cabelo e pele, tornando-a capaz de lidar com qualquer desafio. Sua paixão pelo que faz é refletida em seu trabalho excepcional, o que a torna uma referência em nossa comunidade de beleza </p>
+			<p className='g-txt-just-inter-word'>Sula é uma especialista altamente qualificada e experiente na indústria de beleza, com um foco especial na arte de alisamento capilar. Com uma vasta experiência em trabalhar com todos os tipos de cabelo e técnicas inovadoras, ela é capaz de proporcionar um alisamento perfeitamente liso e impecável. Sua paixão pelo que faz é refletida em cada alisamento, proporcionando um brilho intenso e um toque de suavidade. Confie em Sula e sua equipe para alcançar resultados surpreendentes. Agende sua consulta hoje mesmo e experimente a mágica do alisamento capilar.</p>
 		</div>
 	</section>
 );
