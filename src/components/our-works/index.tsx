@@ -9,12 +9,14 @@ import carousel1 from '@assets/our-works/carousel1.jpg';
 import carousel2 from '@assets/our-works/carousel2.jpg';
 import carousel3 from '@assets/our-works/carousel3.jpg';
 import carousel4 from '@assets/our-works/carousel4.jpg';
+import carousel5 from '@assets/our-works/carousel5.jpeg';
 
 const items = [
 	{content: carousel1, alt: 'Haircut Image'},
 	{content: carousel2, alt: 'Haircut Image'},
 	{content: carousel3, alt: 'Haircut Image'},
 	{content: carousel4, alt: 'Haircut Image'},
+	{content: carousel5, alt: 'Haircut Image'},
 ];
 
 const OurWorks = () => {
