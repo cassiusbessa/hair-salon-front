@@ -20,7 +20,6 @@ function App() {
   return (
     <Provider store={store}>
       <KeyWords words={words} />
-      <h1>TESTE</h1>
       <Header />
       <BookButton />
       <Intro />
