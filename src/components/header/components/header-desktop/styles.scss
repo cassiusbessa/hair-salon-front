@@ -2,67 +2,67 @@
 @import '@styles/mixins';
 
 .header-desktop {
-	background-color: $--primary-bg-black;
-	height: 50px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
+  background-color: $--primary-bg-black;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-	.header-container {
-		display: flex;
-		height: 100%;
-		justify-content: space-between;
-		max-width: 1400px;
-		padding: 0 28px;
-		width: 100%;
+  .header-container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    max-width: 1400px;
+    padding: 0 28px;
+    width: 100%;
 
-		& > img:nth-child(1) {
-			margin-top: 4px;
-		}
+    &>img:nth-child(1) {
+      margin-top: 4px;
+    }
 
-		nav {
-			align-items: center;
-			display: flex;
-			gap: 24px;
-			
-			ul {
-				align-items: center;
-				color: $--primary-light-text;
-				display: flex;
-				font-weight: 700;
-				gap: 24px;
-				list-style: none;
-	
-				li > a {
-					font-size: 1rem;
-				}
+    nav {
+      align-items: center;
+      display: flex;
+      gap: 24px;
 
-				a:hover {
-					color: #75B5A0;
-				}
+      ul {
+        align-items: center;
+        color: $--primary-light-text;
+        display: flex;
+        font-weight: 700;
+        gap: 24px;
+        list-style: none;
 
-				li:nth-last-child(1) > a {
-					color: #75B5A0;
-					font-family: 'Jura';
-					font-size: 1.25rem;
-					text-transform: uppercase;
-				}
+        li>a {
+          font-size: 1rem;
+        }
 
-				li:nth-last-child(1):hover {
-					transform-origin: center center;
-					transform: scale(1.2);
-				}
-			}
-		}
+        a:hover {
+          color: $--primary-light-green;
+        }
 
-		div:nth-last-child(1) img {
-			cursor: pointer;
-		}
-	}
+        li:nth-last-child(1)>a {
+          color: $--primary-light-green;
+          font-family: 'Jura';
+          font-size: 1.25rem;
+          text-transform: uppercase;
+        }
+
+        li:nth-last-child(1):hover {
+          transform-origin: center center;
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    div:nth-last-child(1) img {
+      cursor: pointer;
+    }
+  }
 }
 
 @media (max-width: 949px) {
-	.header-desktop {
-		display: none;
-	}
+  .header-desktop {
+    display: none;
+  }
 }
